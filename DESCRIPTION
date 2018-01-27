@@ -1,0 +1,16 @@
+Package: snakes
+Title: Package containing data from the WHO Snake and Snake Antivenom Database For Use In R
+Version: 0.0.0.9000
+Authors@R: person("Callum", "Taylor", email = "callum.taylor@glasgow.ac.uk", role = c("aut", "cre"))
+Description: This package contains data from the WHO Snake Bite and Antivenom database, for use in R. Data is stored in a tidy format, with some nested variables. Data is not my own, should be attributed to the WHO. Data is not a live stream from the WHO, instead this is as scraped in January 2018. I plan on updating it every few months or so, maybe twice yearly. 
+Depends: R (>= 3.4.0)
+Encoding: UTF-8
+LazyData: true
+Imports:
+  rvest,
+  xml2,
+  purrr,
+  stringr,
+  tidyr,
+  dplyr
+RoxygenNote: 6.0.1
