@@ -22,3 +22,20 @@
 #' }
 #' @source \url{http://apps.who.int/bloodproducts/snakeantivenoms/database/}
 "snake_species_data"
+
+#' Medically Relevant Snakes In All Countries
+#'
+#' A dataset containing the medically relevant snake species in all countries as recorded on the WHO online database
+#' 
+#'
+#' @format A data frame with 1324 rows and 5 variables:
+#' \describe{
+#'   \item{country_name}{Name Of Country As Recorded On WHO Database}
+#'   \item{country_id}{Name Of Country As Recorded On WHO Database}
+#'   \item{snake_family}{Medical Importance Category, Either 1 or 2}
+#'   \item{snake_common_name}{Name of the Snake Species, e.g. "Common Death Adder"}
+#'   \item{snake_species}{Scientific Name of the Snake Species, e.g. "Acanthophis antarcticus"}
+#'   ...
+#' }
+#' @source \url{http://apps.who.int/bloodproducts/snakeantivenoms/database/}
+"snake_country_data"
