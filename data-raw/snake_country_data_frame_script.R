@@ -37,8 +37,10 @@ snake_countries <- snake_countries %>%
 snake_country_data <- purrr::pmap(snake_countries, snake_country_download) %>%
   dplyr::bind_rows()
 
+snake_country_data <- snake_country_data %>%
+  dplyr::select(country_name, country_id, snake_category = `Cat**`, snake_common_name = `Common name`, snake_species = `Species name`)
+
 # Then save our dataset!!!
 readr::write_rds(snake_country_data, "./data-raw/snake_country_data_raw.rds")
 
-snake_country_data <- snake_country_data %>%
-  dplyr::select(country_name, country_id, category = `Cat**`, `Common name`, `Species name`)
+
