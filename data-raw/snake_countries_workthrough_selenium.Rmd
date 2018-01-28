@@ -1,0 +1,223 @@
+---
+title: "Snake Countries Walkthrough - With Selenium"
+output: html_notebook
+---
+
+So at the end of my last attempt, I'd come up against what I thought would be just a little issue, but turns out it was more than I was expecting.
+
+The individual country pages would have multiple tables spread across multiple pages, with javascript links in between. My hope was I could just select those with rvest, but it wasn't to be.
+
+So instead the new approach is to use rSelenium, an r package for an automated browser (selenium), to access this. However to do so I need to use docker, and this involved a bit of mindless clicking.
+
+So I downloaded docker from their website, and selenium from theirs.
+I installed rselenium and followed it's instructions for someone who doesn't understand docker/any of this, and used the instruction `RSelenium::rsDriver()`
+
+https://cran.r-project.org/web/packages/RSelenium/vignettes/RSelenium-basics.html
+
+```{r}
+library(RSelenium)
+# RSelenium::rsDriver()
+```
+
+I set up a docker machine by going into the terminal (nice and easy in rstudio)
+`docker run -d -p 4445:4444 selenium/standalone-chrome`
+
+To then find out any details about it I ran
+
+`docker ps`
+
+This brings up a table showing it's:
+
+- Container ID
+- Image
+- Command
+- Created
+- Status
+- Ports
+- Names
+
+```{r docker}
+remDr <- RSelenium::remoteDriver(remoteServerAddr = "localhost",
+                      port = 4445L,
+                      browserName = "chrome")
+remDr$open()
+```
+
+I don't understand this, but it seems to be working, we can navigate to the website inside our browser
+```{r selenium_navigate}
+remDr$navigate("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx")
+remDr$screenshot(display = TRUE)
+```
+
+Can we use rvest to download stuff from what we've just created? Yes! We can!
+```{r download_country_list}
+snake_countries <- xml2::read_html(remDr$getPageSource()[[1]]) %>%
+  rvest::html_nodes("#ddlCountry") %>%
+  rvest::html_children() %>%
+  rvest::html_attr("value") %>%
+  dplyr::data_frame(countries = .)
+
+# snake_countries <- snake_countries[-1,]
+snake_countries <- snake_countries %>%
+  dplyr::mutate(list_position = 1:160)
+```
+
+So now we want to navigate with selenium to a country page?
+
+```{r load_malawi}
+#Now this is doing something different, its working down the list and selecting countries. Malawi is the 85'th country on the list alphabetically
+
+element<- remDr$findElement(using = 'css selector', "#ddlCountry > option:nth-child(149)")
+element$clickElement()
+
+remDr$screenshot(display = TRUE)
+```
+
+```{r extract_malawi}
+html <- xml2::read_html(remDr$getPageSource()[[1]])
+xml2::write_html(html, "malawi.html")
+```
+
+So then what we want to do is use the javascript links we found to load the next page
+
+```{r malawi_page_two}
+element <- remDr$findElement(using = 'css selector', "#SnakesGridView > tbody > tr:nth-child(12) > td > table > tbody > tr > td:nth-child(2)")
+element$clickElement()
+remDr$screenshot(display = TRUE)
+```
+
+Success!
+
+Now there's just a couple of things left to do.
+
+Download the snake information from the first page of a country profile and store it as a dataframe [x]
+Identify whether there is a second/third/fourth page for the profile
+Go to these pages and download them [x]
+
+Iterate this process like we did for snake profiles, to work through the whole database.
+
+So first things first. There will be a clever way to do this in RSelenium, but we've created a method that works with RVest, so let's just do that again.
+
+It looks like we want a dataframe that collects:
+
+- Link
+- Category 
+- Common Name
+- Species Name
+
+```{r malawi_download}
+country_html <- xml2::read_html(remDr$getPageSource()[[1]])
+
+country_table <- country_html %>%
+  rvest::html_node("#SnakesGridView") %>%
+  rvest::html_table(fill = TRUE)
+
+# Then we add a mutate statement to add the name of the country we want
+```
+
+Right, the fact that the links to other pages for the same country, are in this table isn't a disaster. In fact it allows us to work out if a country has multiple pages or not.
+
+If a country has a single page, the html table created has four columns.
+If it has multiple pages, the html table has 6, as the links mess things up.
+So we could put the whole thing into an ifelse statement.
+
+If length of the table is 4, do this, if 6, do that.
+
+So let's build our first attempt at starting from the beginning, to download a country profile.
+
+```{r download_country}
+# First Load Our Browser
+remDr <- RSelenium::remoteDriver(remoteServerAddr = "localhost",
+                      port = 4445L,
+                      browserName = "chrome")
+remDr$open()
+
+# Then Go To Our Country
+remDr$navigate("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx") # First we load the databas
+element<- remDr$findElement(using = 'css selector', "#ddlCountry > option:nth-child(85)")
+element$clickElement() #We'll need to create a way to insert the country into that child form
+
+# Then Extract The Snake Page
+country_html <- xml2::read_html(remDr$getPageSource()[[1]])
+
+country_table <- country_html %>%
+  rvest::html_node("#SnakesGridView") %>%
+  rvest::html_table(fill = TRUE)
+
+# Then Determine If There Are More Pages
+more_pages <- length(country_table) > 4
+
+if(more_pages == TRUE){
+  # Then Work Out Exactly How Many More Pages
+  country_table_number <- country_html %>%
+  rvest::html_node("#SnakesGridView") %>%
+  rvest::html_node("tbody > tr:nth-child(12)") %>%
+  rvest::html_node("td") %>%
+  rvest::html_node("table") %>%
+  rvest::html_node("tr") %>%
+  rvest::html_nodes("td") %>%
+  length()
+  
+  country_pages <- dplyr::data_frame(
+    page_number = 1:country_table_number,
+    page_element = stringr::str_c("#SnakesGridView > tbody > tr:nth-child(12) > td > table > tbody > tr > td:nth-child(", page_number, ")"))
+  
+  country_pages <- country_pages[-1,]
+  country_pages <- country_pages[,2]
+    
+  secondary_country <- purrr::pmap(country_pages, download_secondary_country) %>%
+  dplyr::bind_rows()
+  
+  country_table <- dplyr::bind_rows(country_table, secondary_country)
+  country_table <- country_table[,1:4] %>%
+    dplyr::filter(is.na(`Link*`))
+}
+```
+
+The above code can be put into a download country function.
+
+So now all we need is a couple more things.
+
+Our script will need to create a list of countries, with their:
+- Name
+- ID
+- Position in List
+
+```{r create_country_list}
+remDr$navigate("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx")
+
+snake_countries <- xml2::read_html(remDr$getPageSource()[[1]]) %>%
+  rvest::html_nodes("#ddlCountry") %>%
+  rvest::html_children() %>%
+  rvest::html_attr("value") %>%
+  dplyr::data_frame(country_id = .)
+
+snake_country_names <- xml2::read_html(remDr$getPageSource()[[1]]) %>%
+  rvest::html_nodes("#ddlCountry") %>%
+  rvest::html_children() %>%
+  rvest::html_text()
+
+snake_countries <- snake_countries %>%
+  dplyr::mutate(list_position = 1:160,
+                country_name = snake_country_names,
+                x = stringr::str_c("#ddlCountry > option:nth-child(",list_position, ")"))
+
+# We chop off our first one as we are never going to navigate to there
+snake_countries <- snake_countries[-1,]
+```
+
+This all seems to be working! Just the last stages now
+```{r last_steps}
+afghanistan <- download_country(x = snake_countries$x[1], country_id = snake_countries$country_id[1], country_name = snake_countries$country_name[1])
+```
+
+Lets test it with a minisample
+```{r final_test}
+mini_countries <- head(snake_countries) %>%
+  dplyr::select(-list_position)
+
+mini_data <- purrr::pmap(mini_countries, download_country) %>%
+  dplyr::bind_rows()
+```
+
+That works too!

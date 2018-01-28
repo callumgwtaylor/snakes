@@ -1,0 +1,96 @@
+---
+title: "Country Profiles"
+output: html_notebook
+---
+
+```{r library}
+library(snakes)
+```
+
+Firstly we need to load up the database and select the country tag:
+
+```{r download_country_list}
+snake_countries <- xml2::read_html("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx") %>%
+  rvest::html_nodes("#ddlCountry") %>%
+  rvest::html_children() %>%
+  rvest::html_attr("value") %>%
+  dplyr::data_frame(countries = .)
+
+snake_countries <- snake_countries[-1,]
+```
+
+So now we need to see if we can load up the database and load up an individual country, 85 is the ID for India:
+
+```{r load_single_country}
+  country <- rvest::html_session("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx")
+  
+  # Load up their query form, create the input we want, and download the species page
+  country_form <- rvest::html_form(country)[[1]]
+  country_form_submit <- rvest::set_values(country_form, ddlCountry = "85")
+  country_zero <- rvest::submit_form(country, country_form_submit) %>%
+    xml2::read_html()
+  
+  # Then let's have a look at the form
+  xml2::write_html(country_zero, "country.html")
+```
+
+So the confusing bit for me here is the fact that a country may be split up over several pages. That's why we picked India in the first place, knowing it has loads of snakes.
+
+We'd hope the links to the next pages would be in a standalone table with it's own name, so they could be referenced directly. But no. They're not.
+
+So instead we'll need to select that table and work out how to extract the links afterwards. We know that the country page will show ten snakes and then split.
+
+This turned out to be a bit more difficult for me than hoped as the bottom row of the table, wasn't named and I wasn't sure how to specify it. I turned to google and this article: http://bradleyboehmke.github.io/2015/12/scraping-html-tables.html. This had a lot of useful information, and it allowed me to think of using the `xml2::xml_child()` function to select the twelth row of a table. The logic is:
+
+- When a table has more than ten snakes on it's first page it will have links to following pages
+- So it will have twelve xml children (the eleventh is just buffer)
+- If we drill down into that twelth row we can work out how many additional pages there are
+- Using the length argument we can extract the amount of pages of snakes for each country
+
+Doing something similar, just drilling a bit further down, we can extract the links for the next two pages.
+
+
+```{r extract_country_snakes}
+country_table_number <- country_zero %>%
+  rvest::html_node("#SnakesGridView") %>%
+  xml2::xml_child(12) %>%
+  rvest::html_node("td") %>%
+  rvest::html_node("table") %>%
+  rvest::html_node("tr") %>%
+  rvest::html_nodes("td") %>%
+  length()
+
+country_table_links <- country_zero %>%
+  rvest::html_node("#SnakesGridView") %>%
+  xml2::xml_child(12) %>%
+  rvest::html_node("td") %>%
+  rvest::html_node("table") %>%
+  rvest::html_node("tr") %>%
+  rvest::html_nodes("td") %>%
+  rvest::html_nodes("a") %>%
+  rvest::html_attr("href")
+```
+
+Can we actually use these links to then go to the next page of snake information?
+
+```{r country_second_page}
+  country <- rvest::html_session("http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx")
+  
+  # Load up their query form, create the input we want, and download the species page
+  country_form <- rvest::html_form(country)[[1]]
+  country_form_submit <- rvest::set_values(country_form, ddlCountry = "85")
+  country_zero_plus_one <- rvest::submit_form(country, country_form_submit) %>%
+  rvest::jump_to(country_table_links[1])
+```
+
+No. Turns out we can't. There's an error there that I think is just because I'm trying to get it to submit javascript and it can't just follow it like a link.
+
+After a bit of googling it looks like everyone recommends using RSelenium for things like this.
+
+So after loading up an article about this on [cran](https://cran.r-project.org/web/packages/RSelenium/vignettes/RSelenium-basics.html) we go to the selenium website and download the [server](http://docs.seleniumhq.org/download/).
+
+Then it wan't us to use Docker, something I haven't tried before. So I'm going to do as little as possible, and use the function `rsDriver`
+
+`install.packages("RSelenium")`
+
+At this point it got very confusing, so I need a new markdown notebook.
