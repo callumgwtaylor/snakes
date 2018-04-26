@@ -150,12 +150,7 @@ more_pages <- length(country_table) > 4
 if(more_pages == TRUE){
   # Then Work Out Exactly How Many More Pages
   country_table_number <- country_html %>%
-  rvest::html_node("#SnakesGridView") %>%
-  rvest::html_node("tbody > tr:nth-child(12)") %>%
-  rvest::html_node("td") %>%
   rvest::html_node("table") %>%
-  rvest::html_node("tr") %>%
-  rvest::html_nodes("td") %>%
   length()
   
   country_pages <- dplyr::data_frame(
