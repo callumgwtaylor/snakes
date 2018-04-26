@@ -179,9 +179,27 @@ $(document).ready(function () {
 <p><a href="https://cran.r-project.org/web/packages/RSelenium/vignettes/RSelenium-basics.html" class="uri">https://cran.r-project.org/web/packages/RSelenium/vignettes/RSelenium-basics.html</a></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShSU2VsZW5pdW0pXG4jIFJTZWxlbml1bTo6cnNEcml2ZXIoKVxuYGBgIn0= -->
-<pre class="r"><code>library(RSelenium)
-# RSelenium::rsDriver()</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShSU2VsZW5pdW0pXG5gYGAifQ== -->
+<pre class="r"><code>library(RSelenium)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDjpLzjuLFSU2VsZW5pdW3jpLzjuLIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjQuM1xuIn0= -->
+<pre><code>package 㤼㸱RSelenium㤼㸲 was built under R version 3.4.3</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSCRdGlkeXZlcnNlkiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNC4zXHUwMDFiWzMwbS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjIuMSAtLVx1MDAxYlszOW1cblx1MDAxYlszMG1cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzBtIDIuMi4xLlx1MDAxYlszMW05MDAwXHUwMDFiWzMwbSAgICAgXHUwMDFiWzMybXZcdTAwMWJbMzBtIFx1MDAxYlszNG1wdXJyciAgXHUwMDFiWzMwbSAwLjIuNCAgICAgXG5cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXRpYmJsZSBcdTAwMWJbMzBtIDEuMy40ICAgICAgICAgIFx1MDAxYlszMm12XHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXIgIFx1MDAxYlszMG0gMC43LjQgICAgIFxuXHUwMDFiWzMybXZcdTAwMWJbMzBtIFx1MDAxYlszNG10aWR5ciAgXHUwMDFiWzMwbSAwLjguMCAgICAgICAgICBcdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXN0cmluZ3JcdTAwMWJbMzBtIDEuMy4wICAgICBcblx1MDAxYlszMm12XHUwMDFiWzMwbSBcdTAwMWJbMzRtcmVhZHIgIFx1MDAxYlszMG0gMS4xLjEgICAgICAgICAgXHUwMDFiWzMybXZcdTAwMWJbMzBtIFx1MDAxYlszNG1mb3JjYXRzXHUwMDFiWzMwbSAwLjIuMCAgICAgXHUwMDFiWzM5bVxucGFja2FnZSCRdGliYmxlkiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNC4zcGFja2FnZSCRdGlkeXKSIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy40LjNwYWNrYWdlIJFwdXJycpIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjQuM3BhY2thZ2UgkWRwbHlykiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNC4zcGFja2FnZSCRc3RyaW5ncpIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjQuM1x1MDAxYlszMG0tLSBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2VfY29uZmxpY3RzKCkgLS1cblx1MDAxYlszMW14XHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzBtIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszMG06OmZpbHRlcigpXG5cdTAwMWJbMzFteFx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWxhZygpXHUwMDFiWzMwbSAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpsYWcoKVx1MDAxYlszOW1cbiJ9 -->
+<pre><code>package 㤼㸱tidyverse㤼㸲 was built under R version 3.4.3[30m-- [1mAttaching packages[22m --------------------------------------- tidyverse 1.2.1 --[39m
+[30m[32mv[30m [34mggplot2[30m 2.2.1.[31m9000[30m     [32mv[30m [34mpurrr  [30m 0.2.4     
+[32mv[30m [34mtibble [30m 1.3.4          [32mv[30m [34mdplyr  [30m 0.7.4     
+[32mv[30m [34mtidyr  [30m 0.8.0          [32mv[30m [34mstringr[30m 1.3.0     
+[32mv[30m [34mreadr  [30m 1.1.1          [32mv[30m [34mforcats[30m 0.2.0     [39m
+package 㤼㸱tibble㤼㸲 was built under R version 3.4.3package 㤼㸱tidyr㤼㸲 was built under R version 3.4.3package 㤼㸱purrr㤼㸲 was built under R version 3.4.3package 㤼㸱dplyr㤼㸲 was built under R version 3.4.3package 㤼㸱stringr㤼㸲 was built under R version 3.4.3[30m-- [1mConflicts[22m ------------------------------------------ tidyverse_conflicts() --
+[31mx[30m [34mdplyr[30m::[32mfilter()[30m masks [34mstats[30m::filter()
+[31mx[30m [34mdplyr[30m::[32mlag()[30m    masks [34mstats[30m::lag()[39m</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBSU2VsZW5pdW06OnJzRHJpdmVyKClcbmBgYCJ9 -->
+<pre class="r"><code># RSelenium::rsDriver()</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -206,103 +224,7 @@ $(document).ready(function () {
                       browserName = &quot;chrome&quot;)
 remDr$open()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>I don’t understand this, but it seems to be working, we can navigate to the website inside our browser</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVtRHIkbmF2aWdhdGUoXCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4XCIpXG5yZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKVxuYGBgIn0= -->
-<pre class="r"><code>remDr$navigate(&quot;http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx&quot;)
-remDr$screenshot(display = TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Can we use rvest to download stuff from what we’ve just created? Yes! We can!</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc25ha2VfY291bnRyaWVzIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkgJT4lXG4gIHJ2ZXN0OjpodG1sX25vZGVzKFwiI2RkbENvdW50cnlcIikgJT4lXG4gIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lXG4gIHJ2ZXN0OjpodG1sX2F0dHIoXCJ2YWx1ZVwiKSAlPiVcbiAgZHBseXI6OmRhdGFfZnJhbWUoY291bnRyaWVzID0gLilcblxuIyBzbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzWy0xLF1cbnNuYWtlX2NvdW50cmllcyA8LSBzbmFrZV9jb3VudHJpZXMgJT4lXG4gIGRwbHlyOjptdXRhdGUobGlzdF9wb3NpdGlvbiA9IDE6MTYwKVxuYGBgIn0= -->
-<pre class="r"><code>snake_countries &lt;- xml2::read_html(remDr$getPageSource()[[1]]) %&gt;%
-  rvest::html_nodes(&quot;#ddlCountry&quot;) %&gt;%
-  rvest::html_children() %&gt;%
-  rvest::html_attr(&quot;value&quot;) %&gt;%
-  dplyr::data_frame(countries = .)
-
-# snake_countries &lt;- snake_countries[-1,]
-snake_countries &lt;- snake_countries %&gt;%
-  dplyr::mutate(list_position = 1:160)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>So now we want to navigate with selenium to a country page?</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05vdyB0aGlzIGlzIGRvaW5nIHNvbWV0aGluZyBkaWZmZXJlbnQsIGl0cyB3b3JraW5nIGRvd24gdGhlIGxpc3QgYW5kIHNlbGVjdGluZyBjb3VudHJpZXMuIE1hbGF3aSBpcyB0aGUgODUndGggY291bnRyeSBvbiB0aGUgbGlzdCBhbHBoYWJldGljYWxseVxuXG5lbGVtZW50PC0gcmVtRHIkZmluZEVsZW1lbnQodXNpbmcgPSAnY3NzIHNlbGVjdG9yJywgXCIjZGRsQ291bnRyeSA+IG9wdGlvbjpudGgtY2hpbGQoMTQ5KVwiKVxuZWxlbWVudCRjbGlja0VsZW1lbnQoKVxuXG5yZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKVxuYGBgIn0= -->
-<pre class="r"><code>#Now this is doing something different, its working down the list and selecting countries. Malawi is the 85'th country on the list alphabetically
-
-element&lt;- remDr$findElement(using = 'css selector', &quot;#ddlCountry &gt; option:nth-child(149)&quot;)
-element$clickElement()
-
-remDr$screenshot(display = TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHRtbCA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pXG54bWwyOjp3cml0ZV9odG1sKGh0bWwsIFwibWFsYXdpLmh0bWxcIilcbmBgYCJ9 -->
-<pre class="r"><code>html &lt;- xml2::read_html(remDr$getPageSource()[[1]])
-xml2::write_html(html, &quot;malawi.html&quot;)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>So then what we want to do is use the javascript links we found to load the next page</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWxlbWVudCA8LSByZW1EciRmaW5kRWxlbWVudCh1c2luZyA9ICdjc3Mgc2VsZWN0b3InLCBcIiNTbmFrZXNHcmlkVmlldyA+IHRib2R5ID4gdHI6bnRoLWNoaWxkKDEyKSA+IHRkID4gdGFibGUgPiB0Ym9keSA+IHRyID4gdGQ6bnRoLWNoaWxkKDIpXCIpXG5lbGVtZW50JGNsaWNrRWxlbWVudCgpXG5yZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKVxuYGBgIn0= -->
-<pre class="r"><code>element &lt;- remDr$findElement(using = 'css selector', &quot;#SnakesGridView &gt; tbody &gt; tr:nth-child(12) &gt; td &gt; table &gt; tbody &gt; tr &gt; td:nth-child(2)&quot;)
-element$clickElement()
-remDr$screenshot(display = TRUE)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Success!</p>
-<p>Now there’s just a couple of things left to do.</p>
-<p>Download the snake information from the first page of a country profile and store it as a dataframe [x] Identify whether there is a second/third/fourth page for the profile Go to these pages and download them [x]</p>
-<p>Iterate this process like we did for snake profiles, to work through the whole database.</p>
-<p>So first things first. There will be a clever way to do this in RSelenium, but we’ve created a method that works with RVest, so let’s just do that again.</p>
-<p>It looks like we want a dataframe that collects:</p>
-<ul>
-<li>Link</li>
-<li>Category</li>
-<li>Common Name</li>
-<li>Species Name</li>
-</ul>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSlcblxuY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X2h0bWwgJT4lXG4gIHJ2ZXN0OjpodG1sX25vZGUoXCIjU25ha2VzR3JpZFZpZXdcIikgJT4lXG4gIHJ2ZXN0OjpodG1sX3RhYmxlKGZpbGwgPSBUUlVFKVxuXG4jIFRoZW4gd2UgYWRkIGEgbXV0YXRlIHN0YXRlbWVudCB0byBhZGQgdGhlIG5hbWUgb2YgdGhlIGNvdW50cnkgd2Ugd2FudFxuYGBgIn0= -->
-<pre class="r"><code>country_html &lt;- xml2::read_html(remDr$getPageSource()[[1]])
-
-country_table &lt;- country_html %&gt;%
-  rvest::html_node(&quot;#SnakesGridView&quot;) %&gt;%
-  rvest::html_table(fill = TRUE)
-
-# Then we add a mutate statement to add the name of the country we want</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Right, the fact that the links to other pages for the same country, are in this table isn’t a disaster. In fact it allows us to work out if a country has multiple pages or not.</p>
-<p>If a country has a single page, the html table created has four columns. If it has multiple pages, the html table has 6, as the links mess things up. So we could put the whole thing into an ifelse statement.</p>
-<p>If length of the table is 4, do this, if 6, do that.</p>
-<p>So let’s build our first attempt at starting from the beginning, to download a country profile.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVtRHIgPC0gUlNlbGVuaXVtOjpyZW1vdGVEcml2ZXIocmVtb3RlU2VydmVyQWRkciA9IFwibG9jYWxob3N0XCIsXG4gICAgICAgICAgICAgICAgICAgICAgcG9ydCA9IDQ0NDVMLFxuICAgICAgICAgICAgICAgICAgICAgIGJyb3dzZXJOYW1lID0gXCJjaHJvbWVcIilcbnJlbURyJG9wZW4oKVxuXG5gYGAifQ== -->
-<pre class="r"><code>remDr &lt;- RSelenium::remoteDriver(remoteServerAddr = &quot;localhost&quot;,
-                      port = 4445L,
-                      browserName = &quot;chrome&quot;)
-remDr$open()
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQ29ubmVjdGluZyB0byByZW1vdGUgc2VydmVyXCJcbiRhcHBsaWNhdGlvbkNhY2hlRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRyb3RhdGFibGVcblsxXSBGQUxTRVxuXG4kbW9iaWxlRW11bGF0aW9uRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRuZXR3b3JrQ29ubmVjdGlvbkVuYWJsZWRcblsxXSBGQUxTRVxuXG4kY2hyb21lXG4kY2hyb21lJGNocm9tZWRyaXZlclZlcnNpb25cblsxXSBcIjIuMzUuNTI4MTM5ICg0N2VhZDc3Y2IzNWFkMmE5YTgzMjQ4YjI5MjE1MTQ2MmE2NmNkODgxKVwiXG5cbiRjaHJvbWUkdXNlckRhdGFEaXJcblsxXSBcIi90bXAvLm9yZy5jaHJvbWl1bS5DaHJvbWl1bS5INFF6SmVcIlxuXG5cbiR0YWtlc0hlYXBTbmFwc2hvdFxuWzFdIFRSVUVcblxuJHBhZ2VMb2FkU3RyYXRlZ3lcblsxXSBcIm5vcm1hbFwiXG5cbiRkYXRhYmFzZUVuYWJsZWRcblsxXSBGQUxTRVxuXG4kaGFuZGxlc0FsZXJ0c1xuWzFdIFRSVUVcblxuJGhhc1RvdWNoU2NyZWVuXG5bMV0gRkFMU0VcblxuJHZlcnNpb25cblsxXSBcIjY0LjAuMzI4Mi4xMTlcIlxuXG4kcGxhdGZvcm1cblsxXSBcIkxpbnV4XCJcblxuJGJyb3dzZXJDb25uZWN0aW9uRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRuYXRpdmVFdmVudHNcblsxXSBUUlVFXG5cbiRhY2NlcHRTc2xDZXJ0c1xuWzFdIEZBTFNFXG5cbiRhY2NlcHRJbnNlY3VyZUNlcnRzXG5bMV0gRkFMU0VcblxuJGxvY2F0aW9uQ29udGV4dEVuYWJsZWRcblsxXSBUUlVFXG5cbiR3ZWJTdG9yYWdlRW5hYmxlZFxuWzFdIFRSVUVcblxuJGJyb3dzZXJOYW1lXG5bMV0gXCJjaHJvbWVcIlxuXG4kdGFrZXNTY3JlZW5zaG90XG5bMV0gVFJVRVxuXG4kamF2YXNjcmlwdEVuYWJsZWRcblsxXSBUUlVFXG5cbiRjc3NTZWxlY3RvcnNFbmFibGVkXG5bMV0gVFJVRVxuXG4kc2V0V2luZG93UmVjdFxuWzFdIFRSVUVcblxuJHVuZXhwZWN0ZWRBbGVydEJlaGF2aW91clxuWzFdIFwiXCJcblxuJGlkXG5bMV0gXCJhNThkZDY2OGRkOGY4YjkyZjE0YjUxMTE3MTA5NTBlY1wiXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQ29ubmVjdGluZyB0byByZW1vdGUgc2VydmVyXCJcbiRhcHBsaWNhdGlvbkNhY2hlRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRyb3RhdGFibGVcblsxXSBGQUxTRVxuXG4kbW9iaWxlRW11bGF0aW9uRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRuZXR3b3JrQ29ubmVjdGlvbkVuYWJsZWRcblsxXSBGQUxTRVxuXG4kY2hyb21lXG4kY2hyb21lJGNocm9tZWRyaXZlclZlcnNpb25cblsxXSBcIjIuMzUuNTI4MTM5ICg0N2VhZDc3Y2IzNWFkMmE5YTgzMjQ4YjI5MjE1MTQ2MmE2NmNkODgxKVwiXG5cbiRjaHJvbWUkdXNlckRhdGFEaXJcblsxXSBcIi90bXAvLm9yZy5jaHJvbWl1bS5DaHJvbWl1bS5WN3BzdXJcIlxuXG5cbiR0YWtlc0hlYXBTbmFwc2hvdFxuWzFdIFRSVUVcblxuJHBhZ2VMb2FkU3RyYXRlZ3lcblsxXSBcIm5vcm1hbFwiXG5cbiRkYXRhYmFzZUVuYWJsZWRcblsxXSBGQUxTRVxuXG4kaGFuZGxlc0FsZXJ0c1xuWzFdIFRSVUVcblxuJGhhc1RvdWNoU2NyZWVuXG5bMV0gRkFMU0VcblxuJHZlcnNpb25cblsxXSBcIjY0LjAuMzI4Mi4xMTlcIlxuXG4kcGxhdGZvcm1cblsxXSBcIkxpbnV4XCJcblxuJGJyb3dzZXJDb25uZWN0aW9uRW5hYmxlZFxuWzFdIEZBTFNFXG5cbiRuYXRpdmVFdmVudHNcblsxXSBUUlVFXG5cbiRhY2NlcHRTc2xDZXJ0c1xuWzFdIEZBTFNFXG5cbiRhY2NlcHRJbnNlY3VyZUNlcnRzXG5bMV0gRkFMU0VcblxuJGxvY2F0aW9uQ29udGV4dEVuYWJsZWRcblsxXSBUUlVFXG5cbiR3ZWJTdG9yYWdlRW5hYmxlZFxuWzFdIFRSVUVcblxuJGJyb3dzZXJOYW1lXG5bMV0gXCJjaHJvbWVcIlxuXG4kdGFrZXNTY3JlZW5zaG90XG5bMV0gVFJVRVxuXG4kamF2YXNjcmlwdEVuYWJsZWRcblsxXSBUUlVFXG5cbiRjc3NTZWxlY3RvcnNFbmFibGVkXG5bMV0gVFJVRVxuXG4kc2V0V2luZG93UmVjdFxuWzFdIFRSVUVcblxuJHVuZXhwZWN0ZWRBbGVydEJlaGF2aW91clxuWzFdIFwiXCJcblxuJGlkXG5bMV0gXCIyYzQwMzk5ZWZmMzM0YzBiNDEyOTJmZDA4MzFmNzYyMFwiXG4ifQ== -->
 <pre><code>[1] &quot;Connecting to remote server&quot;
 $applicationCacheEnabled
 [1] FALSE
@@ -321,7 +243,7 @@ $chrome$chromedriverVersion
 [1] &quot;2.35.528139 (47ead77cb35ad2a9a83248b292151462a66cd881)&quot;
 
 $chrome$userDataDir
-[1] &quot;/tmp/.org.chromium.Chromium.H4QzJe&quot;
+[1] &quot;/tmp/.org.chromium.Chromium.V7psur&quot;
 
 
 $takesHeapSnapshot
@@ -382,7 +304,99 @@ $unexpectedAlertBehaviour
 [1] &quot;&quot;
 
 $id
-[1] &quot;a58dd668dd8f8b92f14b5111710950ec&quot;</code></pre>
+[1] &quot;2c40399eff334c0b41292fd0831f7620&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>I don’t understand this, but it seems to be working, we can navigate to the website inside our browser</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVtRHIkbmF2aWdhdGUoXCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4XCIpXG5yZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>remDr$navigate(&quot;http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx&quot;)
+remDr$screenshot(display = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Can we use rvest to download stuff from what we’ve just created? Yes! We can!</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc25ha2VfY291bnRyaWVzIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkgJT4lXG4gIHJ2ZXN0OjpodG1sX25vZGVzKFwiI2RkbENvdW50cnlcIikgJT4lXG4gIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lXG4gIHJ2ZXN0OjpodG1sX2F0dHIoXCJ2YWx1ZVwiKSAlPiVcbiAgZHBseXI6OmRhdGFfZnJhbWUoY291bnRyaWVzID0gLilcbiMgc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllc1stMSxdXG5zbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzICU+JVxuICBkcGx5cjo6bXV0YXRlKGxpc3RfcG9zaXRpb24gPSAxOjE2MClcbmBgYCJ9 -->
+<pre class="r"><code>snake_countries &lt;- xml2::read_html(remDr$getPageSource()[[1]]) %&gt;%
+  rvest::html_nodes(&quot;#ddlCountry&quot;) %&gt;%
+  rvest::html_children() %&gt;%
+  rvest::html_attr(&quot;value&quot;) %&gt;%
+  dplyr::data_frame(countries = .)
+# snake_countries &lt;- snake_countries[-1,]
+snake_countries &lt;- snake_countries %&gt;%
+  dplyr::mutate(list_position = 1:160)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>So now we want to navigate with selenium to a country page?</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI05vdyB0aGlzIGlzIGRvaW5nIHNvbWV0aGluZyBkaWZmZXJlbnQsIGl0cyB3b3JraW5nIGRvd24gdGhlIGxpc3QgYW5kIHNlbGVjdGluZyBjb3VudHJpZXMuIE1hbGF3aSBpcyB0aGUgODUndGggY291bnRyeSBvbiB0aGUgbGlzdCBhbHBoYWJldGljYWxseVxuZWxlbWVudDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsIFwiI2RkbENvdW50cnkgPiBvcHRpb246bnRoLWNoaWxkKDg1KVwiKVxuZWxlbWVudCRjbGlja0VsZW1lbnQoKVxucmVtRHIkc2NyZWVuc2hvdChkaXNwbGF5ID0gVFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>#Now this is doing something different, its working down the list and selecting countries. Malawi is the 85'th country on the list alphabetically
+element&lt;- remDr$findElement(using = 'css selector', &quot;#ddlCountry &gt; option:nth-child(85)&quot;)
+element$clickElement()
+remDr$screenshot(display = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaHRtbCA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pXG54bWwyOjp3cml0ZV9odG1sKGh0bWwsIFwibWFsYXdpLmh0bWxcIilcbmBgYCJ9 -->
+<pre class="r"><code>html &lt;- xml2::read_html(remDr$getPageSource()[[1]])
+xml2::write_html(html, &quot;malawi.html&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>So then what we want to do is use the javascript links we found to load the next page</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZWxlbWVudCA8LSByZW1EciRmaW5kRWxlbWVudCh1c2luZyA9ICdjc3Mgc2VsZWN0b3InLCBcIiNTbmFrZXNHcmlkVmlldyA+IHRib2R5ID4gdHI6bnRoLWNoaWxkKDEyKSA+IHRkID4gdGFibGUgPiB0Ym9keSA+IHRyID4gdGQ6bnRoLWNoaWxkKDIpXCIpXG5lbGVtZW50JGNsaWNrRWxlbWVudCgpXG5yZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKVxuYGBgIn0= -->
+<pre class="r"><code>element &lt;- remDr$findElement(using = 'css selector', &quot;#SnakesGridView &gt; tbody &gt; tr:nth-child(12) &gt; td &gt; table &gt; tbody &gt; tr &gt; td:nth-child(2)&quot;)
+element$clickElement()
+remDr$screenshot(display = TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Success!</p>
+<p>Now there’s just a couple of things left to do.</p>
+<p>Download the snake information from the first page of a country profile and store it as a dataframe [x] Identify whether there is a second/third/fourth page for the profile Go to these pages and download them [x]</p>
+<p>Iterate this process like we did for snake profiles, to work through the whole database.</p>
+<p>So first things first. There will be a clever way to do this in RSelenium, but we’ve created a method that works with RVest, so let’s just do that again.</p>
+<p>It looks like we want a dataframe that collects:</p>
+<ul>
+<li>Link</li>
+<li>Category</li>
+<li>Common Name</li>
+<li>Species Name</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSlcbmNvdW50cnlfdGFibGUgPC0gY291bnRyeV9odG1sICU+JVxuICBydmVzdDo6aHRtbF9ub2RlKFwiI1NuYWtlc0dyaWRWaWV3XCIpICU+JVxuICBydmVzdDo6aHRtbF90YWJsZShmaWxsID0gVFJVRSlcbiMgVGhlbiB3ZSBhZGQgYSBtdXRhdGUgc3RhdGVtZW50IHRvIGFkZCB0aGUgbmFtZSBvZiB0aGUgY291bnRyeSB3ZSB3YW50XG5gYGAifQ== -->
+<pre class="r"><code>country_html &lt;- xml2::read_html(remDr$getPageSource()[[1]])
+country_table &lt;- country_html %&gt;%
+  rvest::html_node(&quot;#SnakesGridView&quot;) %&gt;%
+  rvest::html_table(fill = TRUE)
+# Then we add a mutate statement to add the name of the country we want</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Right, the fact that the links to other pages for the same country, are in this table isn’t a disaster. In fact it allows us to work out if a country has multiple pages or not.</p>
+<p>If a country has a single page, the html table created has four columns. If it has multiple pages, the html table has 6, as the links mess things up. So we could put the whole thing into an ifelse statement.</p>
+<p>If length of the table is 4, do this, if 6, do that.</p>
+<p>So let’s build our first attempt at starting from the beginning, to download a country profile.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxufVxuXG5gYGAifQ== -->
+<pre class="r"><code>}
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IHVuZXhwZWN0ZWQgJ30nIGluIFwifVwiXG5JbiBhZGRpdGlvbjogVGhlcmUgd2VyZSAxMiB3YXJuaW5ncyAodXNlIHdhcm5pbmdzKCkgdG8gc2VlIHRoZW0pXG4ifQ== -->
+<pre><code>Error: unexpected '}' in &quot;}&quot;
+In addition: There were 12 warnings (use warnings() to see them)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -391,9 +405,20 @@ $id
 <p>Our script will need to create a list of countries, with their: - Name - ID - Position in List</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVtRHIkbmF2aWdhdGUoXCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4XCIpXG5zbmFrZV9jb3VudHJpZXMgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKSAlPiVcbiAgcnZlc3Q6Omh0bWxfbm9kZXMoXCIjZGRsQ291bnRyeVwiKSAlPiVcbiAgcnZlc3Q6Omh0bWxfY2hpbGRyZW4oKSAlPiVcbiAgcnZlc3Q6Omh0bWxfYXR0cihcInZhbHVlXCIpICU+JVxuICBkcGx5cjo6ZGF0YV9mcmFtZShjb3VudHJ5X2lkID0gLilcbnNuYWtlX2NvdW50cnlfbmFtZXMgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKSAlPiVcbiAgcnZlc3Q6Omh0bWxfbm9kZXMoXCIjZGRsQ291bnRyeVwiKSAlPiVcbiAgcnZlc3Q6Omh0bWxfY2hpbGRyZW4oKSAlPiVcbiAgcnZlc3Q6Omh0bWxfdGV4dCgpXG5zbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzICU+JVxuICBkcGx5cjo6bXV0YXRlKGxpc3RfcG9zaXRpb24gPSAxOjE2MCxcbiAgICAgICAgICAgICAgICBjb3VudHJ5X25hbWUgPSBzbmFrZV9jb3VudHJ5X25hbWVzLFxuICAgICAgICAgICAgICAgIHggPSBzdHJpbmdyOjpzdHJfYyhcIiNkZGxDb3VudHJ5ID4gb3B0aW9uOm50aC1jaGlsZChcIixsaXN0X3Bvc2l0aW9uLCBcIilcIikpXG4jIFdlIGNob3Agb2ZmIG91ciBmaXJzdCBvbmUgYXMgd2UgYXJlIG5ldmVyIGdvaW5nIHRvIG5hdmlnYXRlIHRvIHRoZXJlXG5zbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzWy0xLF1cbmBgYCJ9 -->
-<pre class="r"><code>remDr$navigate(&quot;http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx&quot;)
-snake_countries &lt;- xml2::read_html(remDr$getPageSource()[[1]]) %&gt;%
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVtRHIkbmF2aWdhdGUoXCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4XCIpXG5gYGAifQ== -->
+<pre class="r"><code>remDr$navigate(&quot;http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBtZXNzYWdlczpcbjE6IFVua25vd24gb3IgdW5pbml0aWFsaXNlZCBjb2x1bW46ICd4Jy4gXG4yOiBVbmtub3duIG9yIHVuaW5pdGlhbGlzZWQgY29sdW1uOiAneCcuIFxuMzogVW5rbm93biBvciB1bmluaXRpYWxpc2VkIGNvbHVtbjogJ2NvdW50cnlfaWQnLiBcbjQ6IFVua25vd24gb3IgdW5pbml0aWFsaXNlZCBjb2x1bW46ICdjb3VudHJ5X2lkJy4gXG41OiBVbmtub3duIG9yIHVuaW5pdGlhbGlzZWQgY29sdW1uOiAnY291bnRyeV9uYW1lJy4gXG42OiBVbmtub3duIG9yIHVuaW5pdGlhbGlzZWQgY29sdW1uOiAnY291bnRyeV9uYW1lJy4gXG4ifQ== -->
+<pre><code>Warning messages:
+1: Unknown or uninitialised column: 'x'. 
+2: Unknown or uninitialised column: 'x'. 
+3: Unknown or uninitialised column: 'country_id'. 
+4: Unknown or uninitialised column: 'country_id'. 
+5: Unknown or uninitialised column: 'country_name'. 
+6: Unknown or uninitialised column: 'country_name'. </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc25ha2VfY291bnRyaWVzIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkgJT4lXG4gIHJ2ZXN0OjpodG1sX25vZGVzKFwiI2RkbENvdW50cnlcIikgJT4lXG4gIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lXG4gIHJ2ZXN0OjpodG1sX2F0dHIoXCJ2YWx1ZVwiKSAlPiVcbiAgZHBseXI6OmRhdGFfZnJhbWUoY291bnRyeV9pZCA9IC4pXG5zbmFrZV9jb3VudHJ5X25hbWVzIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkgJT4lXG4gIHJ2ZXN0OjpodG1sX25vZGVzKFwiI2RkbENvdW50cnlcIikgJT4lXG4gIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lXG4gIHJ2ZXN0OjpodG1sX3RleHQoKVxuc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllcyAlPiVcbiAgZHBseXI6Om11dGF0ZShsaXN0X3Bvc2l0aW9uID0gMToxNjAsXG4gICAgICAgICAgICAgICAgY291bnRyeV9uYW1lID0gc25ha2VfY291bnRyeV9uYW1lcyxcbiAgICAgICAgICAgICAgICB4ID0gc3RyaW5ncjo6c3RyX2MoXCIjZGRsQ291bnRyeSA+IG9wdGlvbjpudGgtY2hpbGQoXCIsbGlzdF9wb3NpdGlvbiwgXCIpXCIpKVxuIyBXZSBjaG9wIG9mZiBvdXIgZmlyc3Qgb25lIGFzIHdlIGFyZSBuZXZlciBnb2luZyB0byBuYXZpZ2F0ZSB0byB0aGVyZVxuc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllc1stMSxdXG5gYGAifQ== -->
+<pre class="r"><code>snake_countries &lt;- xml2::read_html(remDr$getPageSource()[[1]]) %&gt;%
   rvest::html_nodes(&quot;#ddlCountry&quot;) %&gt;%
   rvest::html_children() %&gt;%
   rvest::html_attr(&quot;value&quot;) %&gt;%
@@ -411,29 +436,107 @@ snake_countries &lt;- snake_countries[-1,]</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>This all seems to be working! Just the last stages now</p>
+<p>This all seems to be working! Just the last stages now. We’ll put the above example into a function. We’ve now created two functions: snake_country_secondary_download, and snake_country_download.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIycgVGhpcyBmdW5jdGlvbiBpcyB1c2VkIGJ5IHRoZSBzbmFrZV9jb3VudHJ5X2RhdGEgc2NyaXB0LCB0byBjcmVhdGUgYSBkYXRhX2ZyYW1lIGxpc3RpbmcgYWxsIGNvdW50cmllcyBhbmQgdGhlIHNuYWtlcyB0aGV5IGNvbnRhaW5cbiMnXG4jJyBAcGFyYW0geCB0aGUgYWRkcmVzcyBmb3Igc2VsZW5pdW0gdG8gZmluZCB0aGUgbmV4dCBjb3VudHJ5XG4jJyBAcGFyYW0gY291bnRyeV9pZCB0aGUgSUQgV0hPIHVzZXMgZm9yIGNvdW50cmllc1xuIycgQHBhcmFtIGNvdW50cnlfbmFtZSB0aGUgbmFtZSBvZiB0aGUgY291bnRyeVxuIycgQGltcG9ydEZyb20gbWFncml0dHIgXCIlPiVcIlxuIycgQGV4cG9ydFxuIycgQGV4YW1wbGVzXG4jJyBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkKClcbnNuYWtlX2NvdW50cnlfZG93bmxvYWQgPC0gZnVuY3Rpb24oeCwgY291bnRyeV9pZCwgY291bnRyeV9uYW1lKXtcbiAgIyBUaGVuIEdvIFRvIE91ciBDb3VudHJ5XG4gIHJlbURyJG5hdmlnYXRlKFwiaHR0cDovL2FwcHMud2hvLmludC9ibG9vZHByb2R1Y3RzL3NuYWtlYW50aXZlbm9tcy9kYXRhYmFzZS9TZWFyY2hGcm0uYXNweFwiKSAjIEZpcnN0IHdlIGxvYWQgdGhlIGRhdGFiYXNcbiAgZWxlbWVudDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsIHgpXG4gIGVsZW1lbnQkY2xpY2tFbGVtZW50KCkgI1dlJ2xsIG5lZWQgdG8gY3JlYXRlIGEgd2F5IHRvIGluc2VydCB0aGUgY291bnRyeSBpbnRvIHRoYXQgY2hpbGQgZm9ybVxuICBcbiAgIyBUaGVuIEV4dHJhY3QgVGhlIFNuYWtlIFBhZ2VcbiAgY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSlcbiAgXG4gIGNvdW50cnlfdGFibGUgPC0gY291bnRyeV9odG1sICU+JVxuICAgIHJ2ZXN0OjpodG1sX25vZGUoXCIjU25ha2VzR3JpZFZpZXdcIikgJT4lXG4gICAgcnZlc3Q6Omh0bWxfdGFibGUoZmlsbCA9IFRSVUUpXG4gIFxuICAjIFRoZW4gRGV0ZXJtaW5lIElmIFRoZXJlIEFyZSBNb3JlIFBhZ2VzXG4gIG1vcmVfcGFnZXMgPC0gbGVuZ3RoKGNvdW50cnlfdGFibGUpID4gNFxuICBcbiAgaWYobW9yZV9wYWdlcyA9PSBUUlVFKXtcbiAgICAjIFRoZW4gV29yayBPdXQgRXhhY3RseSBIb3cgTWFueSBNb3JlIFBhZ2VzXG4gICAgY291bnRyeV90YWJsZV9udW1iZXIgPC0gY291bnRyeV9odG1sICU+JVxuICAgICAgcnZlc3Q6Omh0bWxfbm9kZShcIiNTbmFrZXNHcmlkVmlld1wiKSAlPiVcbiAgICAgIHJ2ZXN0OjpodG1sX25vZGUoXCJ0Ym9keSA+IHRyOm50aC1jaGlsZCgxMilcIikgJT4lXG4gICAgICBydmVzdDo6aHRtbF9ub2RlKFwidGRcIikgJT4lXG4gICAgICBydmVzdDo6aHRtbF9ub2RlKFwidGFibGVcIikgJT4lXG4gICAgICBydmVzdDo6aHRtbF9ub2RlKFwidHJcIikgJT4lXG4gICAgICBydmVzdDo6aHRtbF9ub2RlcyhcInRkXCIpICU+JVxuICAgICAgbGVuZ3RoKClcbiAgICBcbiAgICAjIFRoZW4gY3JlYXRlIGEgZGF0YSBmcmFtZSwgd2l0aCBuZXcgYWRkcmVzcyBmcm9tIHVzIHRvIGRvd25sb2FkIHRoZXNlIGZyb21cbiAgICBjb3VudHJ5X3BhZ2VzIDwtIGRwbHlyOjpkYXRhX2ZyYW1lKFxuICAgICAgcGFnZV9udW1iZXIgPSAxOmNvdW50cnlfdGFibGVfbnVtYmVyLFxuICAgICAgcGFnZV9lbGVtZW50ID0gc3RyaW5ncjo6c3RyX2MoXCIjU25ha2VzR3JpZFZpZXcgPiB0Ym9keSA+IHRyOm50aC1jaGlsZCgxMikgPiB0ZCA+IHRhYmxlID4gdGJvZHkgPiB0ciA+IHRkOm50aC1jaGlsZChcIiwgcGFnZV9udW1iZXIsIFwiKVwiKSlcbiAgICBcbiAgICBjb3VudHJ5X3BhZ2VzIDwtIGNvdW50cnlfcGFnZXNbLTEsXVxuICAgIGNvdW50cnlfcGFnZXMgPC0gY291bnRyeV9wYWdlc1ssMl1cbiAgICBcbiAgICAjIFRoZW4gdXNlIGEgc2Vjb25kYXJ5IGZ1bmN0aW9uIHRvIGRvd25sb2FkIHRoZXNlXG4gICAgc2Vjb25kYXJ5X2NvdW50cnkgPC0gcHVycnI6OnBtYXAoY291bnRyeV9wYWdlcywgc25ha2VfY291bnRyeV9zZWNvbmRhcnlfZG93bmxvYWQpICU+JVxuICAgICAgZHBseXI6OmJpbmRfcm93cygpXG4gICAgXG4gICAgIyBUaGVuLCBmb3IgY291bnRyaWVzIHRoYXQgd2UgaGFkIHRvIGRvd25sb2FkIG11bHRpcGxlIHBhZ2VzLCBtZXJnZSB0aGVtIGFsbCB0b2dldGhlclxuICAgIGNvdW50cnlfdGFibGUgPC0gZHBseXI6OmJpbmRfcm93cyhjb3VudHJ5X3RhYmxlLCBzZWNvbmRhcnlfY291bnRyeSlcbiAgICBjb3VudHJ5X3RhYmxlIDwtIGNvdW50cnlfdGFibGVbLDE6NF0gJT4lXG4gICAgICBkcGx5cjo6ZmlsdGVyKGlzLm5hKGBMaW5rKmApKVxuICB9XG4gIFxuICBjb3VudHJ5X3RhYmxlIDwtIGNvdW50cnlfdGFibGUgJT4lXG4gICAgZHBseXI6Om11dGF0ZShjb3VudHJ5X2lkID0gY291bnRyeV9pZCxcbiAgICAgICAgICAgY291bnRyeV9uYW1lID0gY291bnRyeV9uYW1lKVxuICBcbiAgbWVzc2FnZShjb3VudHJ5X25hbWUpXG4gIGNvdW50cnlfdGFibGVcbn1cbmBgYCJ9 -->
+<pre class="r"><code>#' This function is used by the snake_country_data script, to create a data_frame listing all countries and the snakes they contain
+#'
+#' @param x the address for selenium to find the next country
+#' @param country_id the ID WHO uses for countries
+#' @param country_name the name of the country
+#' @importFrom magrittr &quot;%&gt;%&quot;
+#' @export
+#' @examples
+#' snake_country_download()
+snake_country_download &lt;- function(x, country_id, country_name){
+  # Then Go To Our Country
+  remDr$navigate(&quot;http://apps.who.int/bloodproducts/snakeantivenoms/database/SearchFrm.aspx&quot;) # First we load the databas
+  element&lt;- remDr$findElement(using = 'css selector', x)
+  element$clickElement() #We'll need to create a way to insert the country into that child form
+  
+  # Then Extract The Snake Page
+  country_html &lt;- xml2::read_html(remDr$getPageSource()[[1]])
+  
+  country_table &lt;- country_html %&gt;%
+    rvest::html_node(&quot;#SnakesGridView&quot;) %&gt;%
+    rvest::html_table(fill = TRUE)
+  
+  # Then Determine If There Are More Pages
+  more_pages &lt;- length(country_table) &gt; 4
+  
+  if(more_pages == TRUE){
+    # Then Work Out Exactly How Many More Pages
+    country_table_number &lt;- country_html %&gt;%
+      rvest::html_node(&quot;#SnakesGridView&quot;) %&gt;%
+      rvest::html_node(&quot;tbody &gt; tr:nth-child(12)&quot;) %&gt;%
+      rvest::html_node(&quot;td&quot;) %&gt;%
+      rvest::html_node(&quot;table&quot;) %&gt;%
+      rvest::html_node(&quot;tr&quot;) %&gt;%
+      rvest::html_nodes(&quot;td&quot;) %&gt;%
+      length()
+    
+    # Then create a data frame, with new address from us to download these from
+    country_pages &lt;- dplyr::data_frame(
+      page_number = 1:country_table_number,
+      page_element = stringr::str_c(&quot;#SnakesGridView &gt; tbody &gt; tr:nth-child(12) &gt; td &gt; table &gt; tbody &gt; tr &gt; td:nth-child(&quot;, page_number, &quot;)&quot;))
+    
+    country_pages &lt;- country_pages[-1,]
+    country_pages &lt;- country_pages[,2]
+    
+    # Then use a secondary function to download these
+    secondary_country &lt;- purrr::pmap(country_pages, snake_country_secondary_download) %&gt;%
+      dplyr::bind_rows()
+    
+    # Then, for countries that we had to download multiple pages, merge them all together
+    country_table &lt;- dplyr::bind_rows(country_table, secondary_country)
+    country_table &lt;- country_table[,1:4] %&gt;%
+      dplyr::filter(is.na(`Link*`))
+  }
+  
+  country_table &lt;- country_table %&gt;%
+    dplyr::mutate(country_id = country_id,
+           country_name = country_name)
+  
+  message(country_name)
+  country_table
+}</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWZnaGFuaXN0YW4gPC0gc25ha2VfY291bnRyeV9kb3dubG9hZCh4ID0gc25ha2VfY291bnRyaWVzJHhbMV0sIGNvdW50cnlfaWQgPSBzbmFrZV9jb3VudHJpZXMkY291bnRyeV9pZFsxXSwgY291bnRyeV9uYW1lID0gc25ha2VfY291bnRyaWVzJGNvdW50cnlfbmFtZVsxXSlcbmBgYCJ9 -->
+<pre class="r"><code>afghanistan &lt;- snake_country_download(x = snake_countries$x[1], country_id = snake_countries$country_id[1], country_name = snake_countries$country_name[1])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWZnaGFuaXN0YW5cbiJ9 -->
+<pre><code>Afghanistan</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Lets test it with a minisample</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWluaV9jb3VudHJpZXMgPC0gaGVhZChzbmFrZV9jb3VudHJpZXMpXG5taW5pX2RhdGEgPC0gcHVycnI6OnBtYXAobWluaV9jb3VudHJpZXMsIGRvd25sb2FkX2NvdW50cnkpICU+JVxuICBkcGx5cjo6YmluZF9yb3dzKClcbmBgYCJ9 -->
-<pre class="r"><code>mini_countries &lt;- head(snake_countries)
-mini_data &lt;- purrr::pmap(mini_countries, download_country) %&gt;%
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWluaV9jb3VudHJpZXMgPC0gaGVhZChzbmFrZV9jb3VudHJpZXMpICU+JVxuICBkcGx5cjo6c2VsZWN0KC1saXN0X3Bvc2l0aW9uKVxubWluaV9kYXRhIDwtIHB1cnJyOjpwbWFwKG1pbmlfY291bnRyaWVzLCBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkKSAlPiVcbiAgZHBseXI6OmJpbmRfcm93cygpXG5gYGAifQ== -->
+<pre class="r"><code>mini_countries &lt;- head(snake_countries) %&gt;%
+  dplyr::select(-list_position)
+mini_data &lt;- purrr::pmap(mini_countries, snake_country_download) %&gt;%
   dplyr::bind_rows()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gLmYoY291bnRyeV9pZCA9IC5sW1tjKDFMLCBpKV1dLCBsaXN0X3Bvc2l0aW9uID0gLmxbW2MoMkwsIGkpXV0sICA6IFxuICB1bnVzZWQgYXJndW1lbnQgKGxpc3RfcG9zaXRpb24gPSAubFtbYygyLCBpKV1dKVxuIn0= -->
-<pre><code>Error in .f(country_id = .l[[c(1L, i)]], list_position = .l[[c(2L, i)]],  : 
-  unused argument (list_position = .l[[c(2, i)]])</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiQWZnaGFuaXN0YW5cbkFsYmFuaWFcbkFsZ2VyaWFcbkFuZ29sYVxuQXJnZW50aW5hXG5Bcm1lbmlhXG4ifQ== -->
+<pre><code>Afghanistan
+Albania
+Algeria
+Angola
+Argentina
+Armenia</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>That works too!</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNuYWtlIENvdW50cmllcyBXYWxrdGhyb3VnaCAtIFdpdGggU2VsZW5pdW0iDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpTbyBhdCB0aGUgZW5kIG9mIG15IGxhc3QgYXR0ZW1wdCwgSSdkIGNvbWUgdXAgYWdhaW5zdCB3aGF0IEkgdGhvdWdodCB3b3VsZCBiZSBqdXN0IGEgbGl0dGxlIGlzc3VlLCBidXQgdHVybnMgb3V0IGl0IHdhcyBtb3JlIHRoYW4gSSB3YXMgZXhwZWN0aW5nLg0KDQpUaGUgaW5kaXZpZHVhbCBjb3VudHJ5IHBhZ2VzIHdvdWxkIGhhdmUgbXVsdGlwbGUgdGFibGVzIHNwcmVhZCBhY3Jvc3MgbXVsdGlwbGUgcGFnZXMsIHdpdGggamF2YXNjcmlwdCBsaW5rcyBpbiBiZXR3ZWVuLiBNeSBob3BlIHdhcyBJIGNvdWxkIGp1c3Qgc2VsZWN0IHRob3NlIHdpdGggcnZlc3QsIGJ1dCBpdCB3YXNuJ3QgdG8gYmUuDQoNClNvIGluc3RlYWQgdGhlIG5ldyBhcHByb2FjaCBpcyB0byB1c2UgclNlbGVuaXVtLCBhbiByIHBhY2thZ2UgZm9yIGFuIGF1dG9tYXRlZCBicm93c2VyIChzZWxlbml1bSksIHRvIGFjY2VzcyB0aGlzLiBIb3dldmVyIHRvIGRvIHNvIEkgbmVlZCB0byB1c2UgZG9ja2VyLCBhbmQgdGhpcyBpbnZvbHZlZCBhIGJpdCBvZiBtaW5kbGVzcyBjbGlja2luZy4NCg0KU28gSSBkb3dubG9hZGVkIGRvY2tlciBmcm9tIHRoZWlyIHdlYnNpdGUsIGFuZCBzZWxlbml1bSBmcm9tIHRoZWlycy4NCkkgaW5zdGFsbGVkIHJzZWxlbml1bSBhbmQgZm9sbG93ZWQgaXQncyBpbnN0cnVjdGlvbnMgZm9yIHNvbWVvbmUgd2hvIGRvZXNuJ3QgdW5kZXJzdGFuZCBkb2NrZXIvYW55IG9mIHRoaXMsIGFuZCB1c2VkIHRoZSBpbnN0cnVjdGlvbiBgUlNlbGVuaXVtOjpyc0RyaXZlcigpYA0KDQpodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvUlNlbGVuaXVtL3ZpZ25ldHRlcy9SU2VsZW5pdW0tYmFzaWNzLmh0bWwNCg0KYGBge3J9DQpsaWJyYXJ5KFJTZWxlbml1bSkNCiMgUlNlbGVuaXVtOjpyc0RyaXZlcigpDQpgYGANCg0KSSBzZXQgdXAgYSBkb2NrZXIgbWFjaGluZSBieSBnb2luZyBpbnRvIHRoZSB0ZXJtaW5hbCAobmljZSBhbmQgZWFzeSBpbiByc3R1ZGlvKQ0KYGRvY2tlciBydW4gLWQgLXAgNDQ0NTo0NDQ0IHNlbGVuaXVtL3N0YW5kYWxvbmUtY2hyb21lYA0KDQpUbyB0aGVuIGZpbmQgb3V0IGFueSBkZXRhaWxzIGFib3V0IGl0IEkgcmFuDQoNCmBkb2NrZXIgcHNgDQoNClRoaXMgYnJpbmdzIHVwIGEgdGFibGUgc2hvd2luZyBpdCdzOg0KDQotIENvbnRhaW5lciBJRA0KLSBJbWFnZQ0KLSBDb21tYW5kDQotIENyZWF0ZWQNCi0gU3RhdHVzDQotIFBvcnRzDQotIE5hbWVzDQoNCmBgYHtyIGRvY2tlcn0NCnJlbURyIDwtIFJTZWxlbml1bTo6cmVtb3RlRHJpdmVyKHJlbW90ZVNlcnZlckFkZHIgPSAibG9jYWxob3N0IiwNCiAgICAgICAgICAgICAgICAgICAgICBwb3J0ID0gNDQ0NUwsDQogICAgICAgICAgICAgICAgICAgICAgYnJvd3Nlck5hbWUgPSAiY2hyb21lIikNCnJlbURyJG9wZW4oKQ0KYGBgDQoNCkkgZG9uJ3QgdW5kZXJzdGFuZCB0aGlzLCBidXQgaXQgc2VlbXMgdG8gYmUgd29ya2luZywgd2UgY2FuIG5hdmlnYXRlIHRvIHRoZSB3ZWJzaXRlIGluc2lkZSBvdXIgYnJvd3Nlcg0KYGBge3Igc2VsZW5pdW1fbmF2aWdhdGV9DQpyZW1EciRuYXZpZ2F0ZSgiaHR0cDovL2FwcHMud2hvLmludC9ibG9vZHByb2R1Y3RzL3NuYWtlYW50aXZlbm9tcy9kYXRhYmFzZS9TZWFyY2hGcm0uYXNweCIpDQpyZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKQ0KYGBgDQoNCkNhbiB3ZSB1c2UgcnZlc3QgdG8gZG93bmxvYWQgc3R1ZmYgZnJvbSB3aGF0IHdlJ3ZlIGp1c3QgY3JlYXRlZD8gWWVzISBXZSBjYW4hDQpgYGB7ciBkb3dubG9hZF9jb3VudHJ5X2xpc3R9DQpzbmFrZV9jb3VudHJpZXMgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZXMoIiNkZGxDb3VudHJ5IikgJT4lDQogIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lDQogIHJ2ZXN0OjpodG1sX2F0dHIoInZhbHVlIikgJT4lDQogIGRwbHlyOjpkYXRhX2ZyYW1lKGNvdW50cmllcyA9IC4pDQoNCiMgc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllc1stMSxdDQpzbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzICU+JQ0KICBkcGx5cjo6bXV0YXRlKGxpc3RfcG9zaXRpb24gPSAxOjE2MCkNCmBgYA0KDQpTbyBub3cgd2Ugd2FudCB0byBuYXZpZ2F0ZSB3aXRoIHNlbGVuaXVtIHRvIGEgY291bnRyeSBwYWdlPw0KDQpgYGB7ciBsb2FkX21hbGF3aX0NCiNOb3cgdGhpcyBpcyBkb2luZyBzb21ldGhpbmcgZGlmZmVyZW50LCBpdHMgd29ya2luZyBkb3duIHRoZSBsaXN0IGFuZCBzZWxlY3RpbmcgY291bnRyaWVzLiBNYWxhd2kgaXMgdGhlIDg1J3RoIGNvdW50cnkgb24gdGhlIGxpc3QgYWxwaGFiZXRpY2FsbHkNCg0KZWxlbWVudDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsICIjZGRsQ291bnRyeSA+IG9wdGlvbjpudGgtY2hpbGQoMTQ5KSIpDQplbGVtZW50JGNsaWNrRWxlbWVudCgpDQoNCnJlbURyJHNjcmVlbnNob3QoZGlzcGxheSA9IFRSVUUpDQpgYGANCg0KYGBge3IgZXh0cmFjdF9tYWxhd2l9DQpodG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkNCnhtbDI6OndyaXRlX2h0bWwoaHRtbCwgIm1hbGF3aS5odG1sIikNCmBgYA0KDQpTbyB0aGVuIHdoYXQgd2Ugd2FudCB0byBkbyBpcyB1c2UgdGhlIGphdmFzY3JpcHQgbGlua3Mgd2UgZm91bmQgdG8gbG9hZCB0aGUgbmV4dCBwYWdlDQoNCmBgYHtyIG1hbGF3aV9wYWdlX3R3b30NCmVsZW1lbnQgPC0gcmVtRHIkZmluZEVsZW1lbnQodXNpbmcgPSAnY3NzIHNlbGVjdG9yJywgIiNTbmFrZXNHcmlkVmlldyA+IHRib2R5ID4gdHI6bnRoLWNoaWxkKDEyKSA+IHRkID4gdGFibGUgPiB0Ym9keSA+IHRyID4gdGQ6bnRoLWNoaWxkKDIpIikNCmVsZW1lbnQkY2xpY2tFbGVtZW50KCkNCnJlbURyJHNjcmVlbnNob3QoZGlzcGxheSA9IFRSVUUpDQpgYGANCg0KU3VjY2VzcyENCg0KTm93IHRoZXJlJ3MganVzdCBhIGNvdXBsZSBvZiB0aGluZ3MgbGVmdCB0byBkby4NCg0KRG93bmxvYWQgdGhlIHNuYWtlIGluZm9ybWF0aW9uIGZyb20gdGhlIGZpcnN0IHBhZ2Ugb2YgYSBjb3VudHJ5IHByb2ZpbGUgYW5kIHN0b3JlIGl0IGFzIGEgZGF0YWZyYW1lIFt4XQ0KSWRlbnRpZnkgd2hldGhlciB0aGVyZSBpcyBhIHNlY29uZC90aGlyZC9mb3VydGggcGFnZSBmb3IgdGhlIHByb2ZpbGUNCkdvIHRvIHRoZXNlIHBhZ2VzIGFuZCBkb3dubG9hZCB0aGVtIFt4XQ0KDQpJdGVyYXRlIHRoaXMgcHJvY2VzcyBsaWtlIHdlIGRpZCBmb3Igc25ha2UgcHJvZmlsZXMsIHRvIHdvcmsgdGhyb3VnaCB0aGUgd2hvbGUgZGF0YWJhc2UuDQoNClNvIGZpcnN0IHRoaW5ncyBmaXJzdC4gVGhlcmUgd2lsbCBiZSBhIGNsZXZlciB3YXkgdG8gZG8gdGhpcyBpbiBSU2VsZW5pdW0sIGJ1dCB3ZSd2ZSBjcmVhdGVkIGEgbWV0aG9kIHRoYXQgd29ya3Mgd2l0aCBSVmVzdCwgc28gbGV0J3MganVzdCBkbyB0aGF0IGFnYWluLg0KDQpJdCBsb29rcyBsaWtlIHdlIHdhbnQgYSBkYXRhZnJhbWUgdGhhdCBjb2xsZWN0czoNCg0KLSBMaW5rDQotIENhdGVnb3J5IA0KLSBDb21tb24gTmFtZQ0KLSBTcGVjaWVzIE5hbWUNCg0KYGBge3IgbWFsYXdpX2Rvd25sb2FkfQ0KY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkNCg0KY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X2h0bWwgJT4lDQogIHJ2ZXN0OjpodG1sX25vZGUoIiNTbmFrZXNHcmlkVmlldyIpICU+JQ0KICBydmVzdDo6aHRtbF90YWJsZShmaWxsID0gVFJVRSkNCg0KIyBUaGVuIHdlIGFkZCBhIG11dGF0ZSBzdGF0ZW1lbnQgdG8gYWRkIHRoZSBuYW1lIG9mIHRoZSBjb3VudHJ5IHdlIHdhbnQNCmBgYA0KDQpSaWdodCwgdGhlIGZhY3QgdGhhdCB0aGUgbGlua3MgdG8gb3RoZXIgcGFnZXMgZm9yIHRoZSBzYW1lIGNvdW50cnksIGFyZSBpbiB0aGlzIHRhYmxlIGlzbid0IGEgZGlzYXN0ZXIuIEluIGZhY3QgaXQgYWxsb3dzIHVzIHRvIHdvcmsgb3V0IGlmIGEgY291bnRyeSBoYXMgbXVsdGlwbGUgcGFnZXMgb3Igbm90Lg0KDQpJZiBhIGNvdW50cnkgaGFzIGEgc2luZ2xlIHBhZ2UsIHRoZSBodG1sIHRhYmxlIGNyZWF0ZWQgaGFzIGZvdXIgY29sdW1ucy4NCklmIGl0IGhhcyBtdWx0aXBsZSBwYWdlcywgdGhlIGh0bWwgdGFibGUgaGFzIDYsIGFzIHRoZSBsaW5rcyBtZXNzIHRoaW5ncyB1cC4NClNvIHdlIGNvdWxkIHB1dCB0aGUgd2hvbGUgdGhpbmcgaW50byBhbiBpZmVsc2Ugc3RhdGVtZW50Lg0KDQpJZiBsZW5ndGggb2YgdGhlIHRhYmxlIGlzIDQsIGRvIHRoaXMsIGlmIDYsIGRvIHRoYXQuDQoNClNvIGxldCdzIGJ1aWxkIG91ciBmaXJzdCBhdHRlbXB0IGF0IHN0YXJ0aW5nIGZyb20gdGhlIGJlZ2lubmluZywgdG8gZG93bmxvYWQgYSBjb3VudHJ5IHByb2ZpbGUuDQoNCmBgYHtyIGRvd25sb2FkX2NvdW50cnl9DQojIEZpcnN0IExvYWQgT3VyIEJyb3dzZXINCnJlbURyIDwtIFJTZWxlbml1bTo6cmVtb3RlRHJpdmVyKHJlbW90ZVNlcnZlckFkZHIgPSAibG9jYWxob3N0IiwNCiAgICAgICAgICAgICAgICAgICAgICBwb3J0ID0gNDQ0NUwsDQogICAgICAgICAgICAgICAgICAgICAgYnJvd3Nlck5hbWUgPSAiY2hyb21lIikNCnJlbURyJG9wZW4oKQ0KDQojIFRoZW4gR28gVG8gT3VyIENvdW50cnkNCnJlbURyJG5hdmlnYXRlKCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4IikgIyBGaXJzdCB3ZSBsb2FkIHRoZSBkYXRhYmFzDQplbGVtZW50PC0gcmVtRHIkZmluZEVsZW1lbnQodXNpbmcgPSAnY3NzIHNlbGVjdG9yJywgIiNkZGxDb3VudHJ5ID4gb3B0aW9uOm50aC1jaGlsZCg4NSkiKQ0KZWxlbWVudCRjbGlja0VsZW1lbnQoKSAjV2UnbGwgbmVlZCB0byBjcmVhdGUgYSB3YXkgdG8gaW5zZXJ0IHRoZSBjb3VudHJ5IGludG8gdGhhdCBjaGlsZCBmb3JtDQoNCiMgVGhlbiBFeHRyYWN0IFRoZSBTbmFrZSBQYWdlDQpjb3VudHJ5X2h0bWwgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKQ0KDQpjb3VudHJ5X3RhYmxlIDwtIGNvdW50cnlfaHRtbCAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgiI1NuYWtlc0dyaWRWaWV3IikgJT4lDQogIHJ2ZXN0OjpodG1sX3RhYmxlKGZpbGwgPSBUUlVFKQ0KDQojIFRoZW4gRGV0ZXJtaW5lIElmIFRoZXJlIEFyZSBNb3JlIFBhZ2VzDQptb3JlX3BhZ2VzIDwtIGxlbmd0aChjb3VudHJ5X3RhYmxlKSA+IDQNCg0KaWYobW9yZV9wYWdlcyA9PSBUUlVFKXsNCiAgIyBUaGVuIFdvcmsgT3V0IEV4YWN0bHkgSG93IE1hbnkgTW9yZSBQYWdlcw0KICBjb3VudHJ5X3RhYmxlX251bWJlciA8LSBjb3VudHJ5X2h0bWwgJT4lDQogIHJ2ZXN0OjpodG1sX25vZGUoIiNTbmFrZXNHcmlkVmlldyIpICU+JQ0KICBydmVzdDo6aHRtbF9ub2RlKCJ0Ym9keSA+IHRyOm50aC1jaGlsZCgxMikiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidGQiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidGFibGUiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidHIiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZXMoInRkIikgJT4lDQogIGxlbmd0aCgpDQogIA0KICBjb3VudHJ5X3BhZ2VzIDwtIGRwbHlyOjpkYXRhX2ZyYW1lKA0KICAgIHBhZ2VfbnVtYmVyID0gMTpjb3VudHJ5X3RhYmxlX251bWJlciwNCiAgICBwYWdlX2VsZW1lbnQgPSBzdHJpbmdyOjpzdHJfYygiI1NuYWtlc0dyaWRWaWV3ID4gdGJvZHkgPiB0cjpudGgtY2hpbGQoMTIpID4gdGQgPiB0YWJsZSA+IHRib2R5ID4gdHIgPiB0ZDpudGgtY2hpbGQoIiwgcGFnZV9udW1iZXIsICIpIikpDQogIA0KICBjb3VudHJ5X3BhZ2VzIDwtIGNvdW50cnlfcGFnZXNbLTEsXQ0KICBjb3VudHJ5X3BhZ2VzIDwtIGNvdW50cnlfcGFnZXNbLDJdDQogICAgDQogIHNlY29uZGFyeV9jb3VudHJ5IDwtIHB1cnJyOjpwbWFwKGNvdW50cnlfcGFnZXMsIGRvd25sb2FkX3NlY29uZGFyeV9jb3VudHJ5KSAlPiUNCiAgZHBseXI6OmJpbmRfcm93cygpDQogIA0KICBjb3VudHJ5X3RhYmxlIDwtIGRwbHlyOjpiaW5kX3Jvd3MoY291bnRyeV90YWJsZSwgc2Vjb25kYXJ5X2NvdW50cnkpDQogIGNvdW50cnlfdGFibGUgPC0gY291bnRyeV90YWJsZVssMTo0XSAlPiUNCiAgICBkcGx5cjo6ZmlsdGVyKGlzLm5hKGBMaW5rKmApKQ0KfQ0KYGBgDQoNClRoZSBhYm92ZSBjb2RlIGNhbiBiZSBwdXQgaW50byBhIGRvd25sb2FkIGNvdW50cnkgZnVuY3Rpb24uDQoNClNvIG5vdyBhbGwgd2UgbmVlZCBpcyBhIGNvdXBsZSBtb3JlIHRoaW5ncy4NCg0KT3VyIHNjcmlwdCB3aWxsIG5lZWQgdG8gY3JlYXRlIGEgbGlzdCBvZiBjb3VudHJpZXMsIHdpdGggdGhlaXI6DQotIE5hbWUNCi0gSUQNCi0gUG9zaXRpb24gaW4gTGlzdA0KDQpgYGB7ciBjcmVhdGVfY291bnRyeV9saXN0fQ0KcmVtRHIkbmF2aWdhdGUoImh0dHA6Ly9hcHBzLndoby5pbnQvYmxvb2Rwcm9kdWN0cy9zbmFrZWFudGl2ZW5vbXMvZGF0YWJhc2UvU2VhcmNoRnJtLmFzcHgiKQ0KDQpzbmFrZV9jb3VudHJpZXMgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZXMoIiNkZGxDb3VudHJ5IikgJT4lDQogIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lDQogIHJ2ZXN0OjpodG1sX2F0dHIoInZhbHVlIikgJT4lDQogIGRwbHlyOjpkYXRhX2ZyYW1lKGNvdW50cnlfaWQgPSAuKQ0KDQpzbmFrZV9jb3VudHJ5X25hbWVzIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkgJT4lDQogIHJ2ZXN0OjpodG1sX25vZGVzKCIjZGRsQ291bnRyeSIpICU+JQ0KICBydmVzdDo6aHRtbF9jaGlsZHJlbigpICU+JQ0KICBydmVzdDo6aHRtbF90ZXh0KCkNCg0Kc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllcyAlPiUNCiAgZHBseXI6Om11dGF0ZShsaXN0X3Bvc2l0aW9uID0gMToxNjAsDQogICAgICAgICAgICAgICAgY291bnRyeV9uYW1lID0gc25ha2VfY291bnRyeV9uYW1lcywNCiAgICAgICAgICAgICAgICB4ID0gc3RyaW5ncjo6c3RyX2MoIiNkZGxDb3VudHJ5ID4gb3B0aW9uOm50aC1jaGlsZCgiLGxpc3RfcG9zaXRpb24sICIpIikpDQoNCiMgV2UgY2hvcCBvZmYgb3VyIGZpcnN0IG9uZSBhcyB3ZSBhcmUgbmV2ZXIgZ29pbmcgdG8gbmF2aWdhdGUgdG8gdGhlcmUNCnNuYWtlX2NvdW50cmllcyA8LSBzbmFrZV9jb3VudHJpZXNbLTEsXQ0KYGBgDQoNClRoaXMgYWxsIHNlZW1zIHRvIGJlIHdvcmtpbmchIEp1c3QgdGhlIGxhc3Qgc3RhZ2VzIG5vdw0KYGBge3IgbGFzdF9zdGVwc30NCmFmZ2hhbmlzdGFuIDwtIGRvd25sb2FkX2NvdW50cnkoeCA9IHNuYWtlX2NvdW50cmllcyR4WzFdLCBjb3VudHJ5X2lkID0gc25ha2VfY291bnRyaWVzJGNvdW50cnlfaWRbMV0sIGNvdW50cnlfbmFtZSA9IHNuYWtlX2NvdW50cmllcyRjb3VudHJ5X25hbWVbMV0pDQpgYGANCg0KTGV0cyB0ZXN0IGl0IHdpdGggYSBtaW5pc2FtcGxlDQpgYGB7ciBmaW5hbF90ZXN0fQ0KbWluaV9jb3VudHJpZXMgPC0gaGVhZChzbmFrZV9jb3VudHJpZXMpICU+JQ0KICBkcGx5cjo6c2VsZWN0KC1saXN0X3Bvc2l0aW9uKQ0KDQptaW5pX2RhdGEgPC0gcHVycnI6OnBtYXAobWluaV9jb3VudHJpZXMsIGRvd25sb2FkX2NvdW50cnkpICU+JQ0KICBkcGx5cjo6YmluZF9yb3dzKCkNCmBgYA0KDQpUaGF0IHdvcmtzIHRvbyENCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNuYWtlIENvdW50cmllcyBXYWxrdGhyb3VnaCAtIFdpdGggU2VsZW5pdW0iDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpTbyBhdCB0aGUgZW5kIG9mIG15IGxhc3QgYXR0ZW1wdCwgSSdkIGNvbWUgdXAgYWdhaW5zdCB3aGF0IEkgdGhvdWdodCB3b3VsZCBiZSBqdXN0IGEgbGl0dGxlIGlzc3VlLCBidXQgdHVybnMgb3V0IGl0IHdhcyBtb3JlIHRoYW4gSSB3YXMgZXhwZWN0aW5nLg0KDQpUaGUgaW5kaXZpZHVhbCBjb3VudHJ5IHBhZ2VzIHdvdWxkIGhhdmUgbXVsdGlwbGUgdGFibGVzIHNwcmVhZCBhY3Jvc3MgbXVsdGlwbGUgcGFnZXMsIHdpdGggamF2YXNjcmlwdCBsaW5rcyBpbiBiZXR3ZWVuLiBNeSBob3BlIHdhcyBJIGNvdWxkIGp1c3Qgc2VsZWN0IHRob3NlIHdpdGggcnZlc3QsIGJ1dCBpdCB3YXNuJ3QgdG8gYmUuDQoNClNvIGluc3RlYWQgdGhlIG5ldyBhcHByb2FjaCBpcyB0byB1c2UgclNlbGVuaXVtLCBhbiByIHBhY2thZ2UgZm9yIGFuIGF1dG9tYXRlZCBicm93c2VyIChzZWxlbml1bSksIHRvIGFjY2VzcyB0aGlzLiBIb3dldmVyIHRvIGRvIHNvIEkgbmVlZCB0byB1c2UgZG9ja2VyLCBhbmQgdGhpcyBpbnZvbHZlZCBhIGJpdCBvZiBtaW5kbGVzcyBjbGlja2luZy4NCg0KU28gSSBkb3dubG9hZGVkIGRvY2tlciBmcm9tIHRoZWlyIHdlYnNpdGUsIGFuZCBzZWxlbml1bSBmcm9tIHRoZWlycy4NCkkgaW5zdGFsbGVkIHJzZWxlbml1bSBhbmQgZm9sbG93ZWQgaXQncyBpbnN0cnVjdGlvbnMgZm9yIHNvbWVvbmUgd2hvIGRvZXNuJ3QgdW5kZXJzdGFuZCBkb2NrZXIvYW55IG9mIHRoaXMsIGFuZCB1c2VkIHRoZSBpbnN0cnVjdGlvbiBgUlNlbGVuaXVtOjpyc0RyaXZlcigpYA0KDQpodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvUlNlbGVuaXVtL3ZpZ25ldHRlcy9SU2VsZW5pdW0tYmFzaWNzLmh0bWwNCg0KYGBge3J9DQpsaWJyYXJ5KFJTZWxlbml1bSkNCmxpYnJhcnkodGlkeXZlcnNlKQ0KIyBSU2VsZW5pdW06OnJzRHJpdmVyKCkNCmBgYA0KDQpJIHNldCB1cCBhIGRvY2tlciBtYWNoaW5lIGJ5IGdvaW5nIGludG8gdGhlIHRlcm1pbmFsIChuaWNlIGFuZCBlYXN5IGluIHJzdHVkaW8pDQpgZG9ja2VyIHJ1biAtZCAtcCA0NDQ1OjQ0NDQgc2VsZW5pdW0vc3RhbmRhbG9uZS1jaHJvbWVgDQoNClRvIHRoZW4gZmluZCBvdXQgYW55IGRldGFpbHMgYWJvdXQgaXQgSSByYW4NCg0KYGRvY2tlciBwc2ANCg0KVGhpcyBicmluZ3MgdXAgYSB0YWJsZSBzaG93aW5nIGl0J3M6DQoNCi0gQ29udGFpbmVyIElEDQotIEltYWdlDQotIENvbW1hbmQNCi0gQ3JlYXRlZA0KLSBTdGF0dXMNCi0gUG9ydHMNCi0gTmFtZXMNCg0KYGBge3IgZG9ja2VyfQ0KcmVtRHIgPC0gUlNlbGVuaXVtOjpyZW1vdGVEcml2ZXIocmVtb3RlU2VydmVyQWRkciA9ICJsb2NhbGhvc3QiLA0KICAgICAgICAgICAgICAgICAgICAgIHBvcnQgPSA0NDQ1TCwNCiAgICAgICAgICAgICAgICAgICAgICBicm93c2VyTmFtZSA9ICJjaHJvbWUiKQ0KcmVtRHIkb3BlbigpDQpgYGANCg0KSSBkb24ndCB1bmRlcnN0YW5kIHRoaXMsIGJ1dCBpdCBzZWVtcyB0byBiZSB3b3JraW5nLCB3ZSBjYW4gbmF2aWdhdGUgdG8gdGhlIHdlYnNpdGUgaW5zaWRlIG91ciBicm93c2VyDQpgYGB7ciBzZWxlbml1bV9uYXZpZ2F0ZX0NCnJlbURyJG5hdmlnYXRlKCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4IikNCnJlbURyJHNjcmVlbnNob3QoZGlzcGxheSA9IFRSVUUpDQpgYGANCg0KQ2FuIHdlIHVzZSBydmVzdCB0byBkb3dubG9hZCBzdHVmZiBmcm9tIHdoYXQgd2UndmUganVzdCBjcmVhdGVkPyBZZXMhIFdlIGNhbiENCmBgYHtyIGRvd25sb2FkX2NvdW50cnlfbGlzdH0NCnNuYWtlX2NvdW50cmllcyA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pICU+JQ0KICBydmVzdDo6aHRtbF9ub2RlcygiI2RkbENvdW50cnkiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfY2hpbGRyZW4oKSAlPiUNCiAgcnZlc3Q6Omh0bWxfYXR0cigidmFsdWUiKSAlPiUNCiAgZHBseXI6OmRhdGFfZnJhbWUoY291bnRyaWVzID0gLikNCg0KIyBzbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzWy0xLF0NCnNuYWtlX2NvdW50cmllcyA8LSBzbmFrZV9jb3VudHJpZXMgJT4lDQogIGRwbHlyOjptdXRhdGUobGlzdF9wb3NpdGlvbiA9IDE6MTYwKQ0KYGBgDQoNClNvIG5vdyB3ZSB3YW50IHRvIG5hdmlnYXRlIHdpdGggc2VsZW5pdW0gdG8gYSBjb3VudHJ5IHBhZ2U/DQoNCmBgYHtyIGxvYWRfbWFsYXdpfQ0KI05vdyB0aGlzIGlzIGRvaW5nIHNvbWV0aGluZyBkaWZmZXJlbnQsIGl0cyB3b3JraW5nIGRvd24gdGhlIGxpc3QgYW5kIHNlbGVjdGluZyBjb3VudHJpZXMuIE1hbGF3aSBpcyB0aGUgODUndGggY291bnRyeSBvbiB0aGUgbGlzdCBhbHBoYWJldGljYWxseQ0KDQplbGVtZW50PC0gcmVtRHIkZmluZEVsZW1lbnQodXNpbmcgPSAnY3NzIHNlbGVjdG9yJywgIiNkZGxDb3VudHJ5ID4gb3B0aW9uOm50aC1jaGlsZCg4NSkiKQ0KZWxlbWVudCRjbGlja0VsZW1lbnQoKQ0KDQpyZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKQ0KYGBgDQoNCmBgYHtyIGV4dHJhY3RfbWFsYXdpfQ0KaHRtbCA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pDQp4bWwyOjp3cml0ZV9odG1sKGh0bWwsICJtYWxhd2kuaHRtbCIpDQpgYGANCg0KU28gdGhlbiB3aGF0IHdlIHdhbnQgdG8gZG8gaXMgdXNlIHRoZSBqYXZhc2NyaXB0IGxpbmtzIHdlIGZvdW5kIHRvIGxvYWQgdGhlIG5leHQgcGFnZQ0KDQpgYGB7ciBtYWxhd2lfcGFnZV90d299DQplbGVtZW50IDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsICIjU25ha2VzR3JpZFZpZXcgPiB0Ym9keSA+IHRyOm50aC1jaGlsZCgxMikgPiB0ZCA+IHRhYmxlID4gdGJvZHkgPiB0ciA+IHRkOm50aC1jaGlsZCgyKSIpDQplbGVtZW50JGNsaWNrRWxlbWVudCgpDQpyZW1EciRzY3JlZW5zaG90KGRpc3BsYXkgPSBUUlVFKQ0KYGBgDQoNClN1Y2Nlc3MhDQoNCk5vdyB0aGVyZSdzIGp1c3QgYSBjb3VwbGUgb2YgdGhpbmdzIGxlZnQgdG8gZG8uDQoNCkRvd25sb2FkIHRoZSBzbmFrZSBpbmZvcm1hdGlvbiBmcm9tIHRoZSBmaXJzdCBwYWdlIG9mIGEgY291bnRyeSBwcm9maWxlIGFuZCBzdG9yZSBpdCBhcyBhIGRhdGFmcmFtZSBbeF0NCklkZW50aWZ5IHdoZXRoZXIgdGhlcmUgaXMgYSBzZWNvbmQvdGhpcmQvZm91cnRoIHBhZ2UgZm9yIHRoZSBwcm9maWxlDQpHbyB0byB0aGVzZSBwYWdlcyBhbmQgZG93bmxvYWQgdGhlbSBbeF0NCg0KSXRlcmF0ZSB0aGlzIHByb2Nlc3MgbGlrZSB3ZSBkaWQgZm9yIHNuYWtlIHByb2ZpbGVzLCB0byB3b3JrIHRocm91Z2ggdGhlIHdob2xlIGRhdGFiYXNlLg0KDQpTbyBmaXJzdCB0aGluZ3MgZmlyc3QuIFRoZXJlIHdpbGwgYmUgYSBjbGV2ZXIgd2F5IHRvIGRvIHRoaXMgaW4gUlNlbGVuaXVtLCBidXQgd2UndmUgY3JlYXRlZCBhIG1ldGhvZCB0aGF0IHdvcmtzIHdpdGggUlZlc3QsIHNvIGxldCdzIGp1c3QgZG8gdGhhdCBhZ2Fpbi4NCg0KSXQgbG9va3MgbGlrZSB3ZSB3YW50IGEgZGF0YWZyYW1lIHRoYXQgY29sbGVjdHM6DQoNCi0gTGluaw0KLSBDYXRlZ29yeSANCi0gQ29tbW9uIE5hbWUNCi0gU3BlY2llcyBOYW1lDQoNCmBgYHtyIG1hbGF3aV9kb3dubG9hZH0NCmNvdW50cnlfaHRtbCA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pDQoNCmNvdW50cnlfdGFibGUgPC0gY291bnRyeV9odG1sICU+JQ0KICBydmVzdDo6aHRtbF9ub2RlKCIjU25ha2VzR3JpZFZpZXciKSAlPiUNCiAgcnZlc3Q6Omh0bWxfdGFibGUoZmlsbCA9IFRSVUUpDQoNCiMgVGhlbiB3ZSBhZGQgYSBtdXRhdGUgc3RhdGVtZW50IHRvIGFkZCB0aGUgbmFtZSBvZiB0aGUgY291bnRyeSB3ZSB3YW50DQpgYGANCg0KUmlnaHQsIHRoZSBmYWN0IHRoYXQgdGhlIGxpbmtzIHRvIG90aGVyIHBhZ2VzIGZvciB0aGUgc2FtZSBjb3VudHJ5LCBhcmUgaW4gdGhpcyB0YWJsZSBpc24ndCBhIGRpc2FzdGVyLiBJbiBmYWN0IGl0IGFsbG93cyB1cyB0byB3b3JrIG91dCBpZiBhIGNvdW50cnkgaGFzIG11bHRpcGxlIHBhZ2VzIG9yIG5vdC4NCg0KSWYgYSBjb3VudHJ5IGhhcyBhIHNpbmdsZSBwYWdlLCB0aGUgaHRtbCB0YWJsZSBjcmVhdGVkIGhhcyBmb3VyIGNvbHVtbnMuDQpJZiBpdCBoYXMgbXVsdGlwbGUgcGFnZXMsIHRoZSBodG1sIHRhYmxlIGhhcyA2LCBhcyB0aGUgbGlua3MgbWVzcyB0aGluZ3MgdXAuDQpTbyB3ZSBjb3VsZCBwdXQgdGhlIHdob2xlIHRoaW5nIGludG8gYW4gaWZlbHNlIHN0YXRlbWVudC4NCg0KSWYgbGVuZ3RoIG9mIHRoZSB0YWJsZSBpcyA0LCBkbyB0aGlzLCBpZiA2LCBkbyB0aGF0Lg0KDQpTbyBsZXQncyBidWlsZCBvdXIgZmlyc3QgYXR0ZW1wdCBhdCBzdGFydGluZyBmcm9tIHRoZSBiZWdpbm5pbmcsIHRvIGRvd25sb2FkIGEgY291bnRyeSBwcm9maWxlLg0KDQpgYGB7ciBkb3dubG9hZF9jb3VudHJ5fQ0KIyBGaXJzdCBMb2FkIE91ciBCcm93c2VyDQpyZW1EciA8LSBSU2VsZW5pdW06OnJlbW90ZURyaXZlcihyZW1vdGVTZXJ2ZXJBZGRyID0gImxvY2FsaG9zdCIsDQogICAgICAgICAgICAgICAgICAgICAgcG9ydCA9IDQ0NDVMLA0KICAgICAgICAgICAgICAgICAgICAgIGJyb3dzZXJOYW1lID0gImNocm9tZSIpDQpyZW1EciRvcGVuKCkNCg0KIyBUaGVuIEdvIFRvIE91ciBDb3VudHJ5DQpyZW1EciRuYXZpZ2F0ZSgiaHR0cDovL2FwcHMud2hvLmludC9ibG9vZHByb2R1Y3RzL3NuYWtlYW50aXZlbm9tcy9kYXRhYmFzZS9TZWFyY2hGcm0uYXNweCIpICMgRmlyc3Qgd2UgbG9hZCB0aGUgZGF0YWJhcw0KZWxlbWVudDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsICIjZGRsQ291bnRyeSA+IG9wdGlvbjpudGgtY2hpbGQoODUpIikNCmVsZW1lbnQkY2xpY2tFbGVtZW50KCkgI1dlJ2xsIG5lZWQgdG8gY3JlYXRlIGEgd2F5IHRvIGluc2VydCB0aGUgY291bnRyeSBpbnRvIHRoYXQgY2hpbGQgZm9ybQ0KDQojIFRoZW4gRXh0cmFjdCBUaGUgU25ha2UgUGFnZQ0KY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkNCg0KY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X2h0bWwgJT4lDQogIHJ2ZXN0OjpodG1sX25vZGUoIiNTbmFrZXNHcmlkVmlldyIpICU+JQ0KICBydmVzdDo6aHRtbF90YWJsZShmaWxsID0gVFJVRSkNCg0KIyBUaGVuIERldGVybWluZSBJZiBUaGVyZSBBcmUgTW9yZSBQYWdlcw0KbW9yZV9wYWdlcyA8LSBsZW5ndGgoY291bnRyeV90YWJsZSkgPiA0DQoNCnNuYWtlX2NvdW50cnlfc2Vjb25kYXJ5X2Rvd25sb2FkIDwtIGZ1bmN0aW9uKHBhZ2VfZWxlbWVudCl7DQogIA0KICBlbGVtZW50IDwtIHJlbURyJGZpbmRFbGVtZW50KHVzaW5nID0gJ2NzcyBzZWxlY3RvcicsIHBhZ2VfZWxlbWVudCkNCiAgZWxlbWVudCRjbGlja0VsZW1lbnQoKQ0KICANCiAgY291bnRyeV9odG1sIDwtIHhtbDI6OnJlYWRfaHRtbChyZW1EciRnZXRQYWdlU291cmNlKClbWzFdXSkNCiAgDQogIHNlY29uZGFyeV9jb3VudHJ5IDwtIGNvdW50cnlfaHRtbCAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgiI1NuYWtlc0dyaWRWaWV3IikgJT4lDQogIHJ2ZXN0OjpodG1sX3RhYmxlKGZpbGwgPSBUUlVFKQ0KICANCiAgc2Vjb25kYXJ5X2NvdW50cnkNCn0NCg0KaWYobW9yZV9wYWdlcyA9PSBUUlVFKXsNCiAgIyBUaGVuIFdvcmsgT3V0IEV4YWN0bHkgSG93IE1hbnkgTW9yZSBQYWdlcw0KICBjb3VudHJ5X3RhYmxlX251bWJlciA8LSBjb3VudHJ5X2h0bWwgJT4lDQogIHJ2ZXN0OjpodG1sX25vZGUoIiNTbmFrZXNHcmlkVmlldyIpICU+JQ0KICBydmVzdDo6aHRtbF9ub2RlKCJ0Ym9keSA+IHRyOm50aC1jaGlsZCgxMikiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidGQiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidGFibGUiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZSgidHIiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZXMoInRkIikgJT4lDQogIGxlbmd0aCgpDQoNCiAgDQogIGNvdW50cnlfcGFnZXMgPC0gZHBseXI6OmRhdGFfZnJhbWUoDQogICAgcGFnZV9udW1iZXIgPSAxOmNvdW50cnlfdGFibGVfbnVtYmVyLA0KICAgIHBhZ2VfZWxlbWVudCA9IHN0cmluZ3I6OnN0cl9jKCIjU25ha2VzR3JpZFZpZXcgPiB0Ym9keSA+IHRyOm50aC1jaGlsZCgxMikgPiB0ZCA+IHRhYmxlID4gdGJvZHkgPiB0ciA+IHRkOm50aC1jaGlsZCgiLCBwYWdlX251bWJlciwgIikiKSkNCiAgDQogIGNvdW50cnlfcGFnZXMgPC0gY291bnRyeV9wYWdlc1stMSxdDQogIGNvdW50cnlfcGFnZXMgPC0gY291bnRyeV9wYWdlc1ssMl0NCiAgICANCiAgc2Vjb25kYXJ5X2NvdW50cnkgPC0gcHVycnI6OnBtYXAoY291bnRyeV9wYWdlcywgc25ha2VfY291bnRyeV9zZWNvbmRhcnlfZG93bmxvYWQpICU+JQ0KICBkcGx5cjo6YmluZF9yb3dzKCkNCiAgDQogIGNvdW50cnlfdGFibGUgPC0gZHBseXI6OmJpbmRfcm93cyhjb3VudHJ5X3RhYmxlLCBzZWNvbmRhcnlfY291bnRyeSkNCiAgY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X3RhYmxlWywxOjRdICU+JQ0KICAgIGRwbHlyOjpmaWx0ZXIoaXMubmEoYExpbmsqYCkpDQp9DQpgYGANCg0KVGhlIGFib3ZlIGNvZGUgY2FuIGJlIHB1dCBpbnRvIGEgZG93bmxvYWQgY291bnRyeSBmdW5jdGlvbi4NCg0KU28gbm93IGFsbCB3ZSBuZWVkIGlzIGEgY291cGxlIG1vcmUgdGhpbmdzLg0KDQpPdXIgc2NyaXB0IHdpbGwgbmVlZCB0byBjcmVhdGUgYSBsaXN0IG9mIGNvdW50cmllcywgd2l0aCB0aGVpcjoNCi0gTmFtZQ0KLSBJRA0KLSBQb3NpdGlvbiBpbiBMaXN0DQoNCmBgYHtyIGNyZWF0ZV9jb3VudHJ5X2xpc3R9DQpyZW1EciRuYXZpZ2F0ZSgiaHR0cDovL2FwcHMud2hvLmludC9ibG9vZHByb2R1Y3RzL3NuYWtlYW50aXZlbm9tcy9kYXRhYmFzZS9TZWFyY2hGcm0uYXNweCIpDQoNCnNuYWtlX2NvdW50cmllcyA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pICU+JQ0KICBydmVzdDo6aHRtbF9ub2RlcygiI2RkbENvdW50cnkiKSAlPiUNCiAgcnZlc3Q6Omh0bWxfY2hpbGRyZW4oKSAlPiUNCiAgcnZlc3Q6Omh0bWxfYXR0cigidmFsdWUiKSAlPiUNCiAgZHBseXI6OmRhdGFfZnJhbWUoY291bnRyeV9pZCA9IC4pDQoNCnNuYWtlX2NvdW50cnlfbmFtZXMgPC0geG1sMjo6cmVhZF9odG1sKHJlbURyJGdldFBhZ2VTb3VyY2UoKVtbMV1dKSAlPiUNCiAgcnZlc3Q6Omh0bWxfbm9kZXMoIiNkZGxDb3VudHJ5IikgJT4lDQogIHJ2ZXN0OjpodG1sX2NoaWxkcmVuKCkgJT4lDQogIHJ2ZXN0OjpodG1sX3RleHQoKQ0KDQpzbmFrZV9jb3VudHJpZXMgPC0gc25ha2VfY291bnRyaWVzICU+JQ0KICBkcGx5cjo6bXV0YXRlKGxpc3RfcG9zaXRpb24gPSAxOjE2MCwNCiAgICAgICAgICAgICAgICBjb3VudHJ5X25hbWUgPSBzbmFrZV9jb3VudHJ5X25hbWVzLA0KICAgICAgICAgICAgICAgIHggPSBzdHJpbmdyOjpzdHJfYygiI2RkbENvdW50cnkgPiBvcHRpb246bnRoLWNoaWxkKCIsbGlzdF9wb3NpdGlvbiwgIikiKSkNCg0KIyBXZSBjaG9wIG9mZiBvdXIgZmlyc3Qgb25lIGFzIHdlIGFyZSBuZXZlciBnb2luZyB0byBuYXZpZ2F0ZSB0byB0aGVyZQ0Kc25ha2VfY291bnRyaWVzIDwtIHNuYWtlX2NvdW50cmllc1stMSxdDQpgYGANCg0KVGhpcyBhbGwgc2VlbXMgdG8gYmUgd29ya2luZyEgSnVzdCB0aGUgbGFzdCBzdGFnZXMgbm93LiBXZSdsbCBwdXQgdGhlIGFib3ZlIGV4YW1wbGUgaW50byBhIGZ1bmN0aW9uLg0KV2UndmUgbm93IGNyZWF0ZWQgdHdvIGZ1bmN0aW9uczogc25ha2VfY291bnRyeV9zZWNvbmRhcnlfZG93bmxvYWQsIGFuZCBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkLg0KDQpgYGB7ciBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkfQ0KIycgVGhpcyBmdW5jdGlvbiBpcyB1c2VkIGJ5IHRoZSBzbmFrZV9jb3VudHJ5X2RhdGEgc2NyaXB0LCB0byBjcmVhdGUgYSBkYXRhX2ZyYW1lIGxpc3RpbmcgYWxsIGNvdW50cmllcyBhbmQgdGhlIHNuYWtlcyB0aGV5IGNvbnRhaW4NCiMnDQojJyBAcGFyYW0geCB0aGUgYWRkcmVzcyBmb3Igc2VsZW5pdW0gdG8gZmluZCB0aGUgbmV4dCBjb3VudHJ5DQojJyBAcGFyYW0gY291bnRyeV9pZCB0aGUgSUQgV0hPIHVzZXMgZm9yIGNvdW50cmllcw0KIycgQHBhcmFtIGNvdW50cnlfbmFtZSB0aGUgbmFtZSBvZiB0aGUgY291bnRyeQ0KIycgQGltcG9ydEZyb20gbWFncml0dHIgIiU+JSINCiMnIEBleHBvcnQNCiMnIEBleGFtcGxlcw0KIycgc25ha2VfY291bnRyeV9kb3dubG9hZCgpDQoNCnNuYWtlX2NvdW50cnlfZG93bmxvYWQgPC0gZnVuY3Rpb24oeCwgY291bnRyeV9pZCwgY291bnRyeV9uYW1lKXsNCiAgIyBUaGVuIEdvIFRvIE91ciBDb3VudHJ5DQogIHJlbURyJG5hdmlnYXRlKCJodHRwOi8vYXBwcy53aG8uaW50L2Jsb29kcHJvZHVjdHMvc25ha2VhbnRpdmVub21zL2RhdGFiYXNlL1NlYXJjaEZybS5hc3B4IikgIyBGaXJzdCB3ZSBsb2FkIHRoZSBkYXRhYmFzDQogIGVsZW1lbnQ8LSByZW1EciRmaW5kRWxlbWVudCh1c2luZyA9ICdjc3Mgc2VsZWN0b3InLCB4KQ0KICBlbGVtZW50JGNsaWNrRWxlbWVudCgpICNXZSdsbCBuZWVkIHRvIGNyZWF0ZSBhIHdheSB0byBpbnNlcnQgdGhlIGNvdW50cnkgaW50byB0aGF0IGNoaWxkIGZvcm0NCiAgDQogICMgVGhlbiBFeHRyYWN0IFRoZSBTbmFrZSBQYWdlDQogIGNvdW50cnlfaHRtbCA8LSB4bWwyOjpyZWFkX2h0bWwocmVtRHIkZ2V0UGFnZVNvdXJjZSgpW1sxXV0pDQogIA0KICBjb3VudHJ5X3RhYmxlIDwtIGNvdW50cnlfaHRtbCAlPiUNCiAgICBydmVzdDo6aHRtbF9ub2RlKCIjU25ha2VzR3JpZFZpZXciKSAlPiUNCiAgICBydmVzdDo6aHRtbF90YWJsZShmaWxsID0gVFJVRSkNCiAgDQogICMgVGhlbiBEZXRlcm1pbmUgSWYgVGhlcmUgQXJlIE1vcmUgUGFnZXMNCiAgbW9yZV9wYWdlcyA8LSBsZW5ndGgoY291bnRyeV90YWJsZSkgPiA0DQogIA0KICBpZihtb3JlX3BhZ2VzID09IFRSVUUpew0KICAgICMgVGhlbiBXb3JrIE91dCBFeGFjdGx5IEhvdyBNYW55IE1vcmUgUGFnZXMNCiAgICBjb3VudHJ5X3RhYmxlX251bWJlciA8LSBjb3VudHJ5X2h0bWwgJT4lDQogICAgICBydmVzdDo6aHRtbF9ub2RlKCIjU25ha2VzR3JpZFZpZXciKSAlPiUNCiAgICAgIHJ2ZXN0OjpodG1sX25vZGUoInRib2R5ID4gdHI6bnRoLWNoaWxkKDEyKSIpICU+JQ0KICAgICAgcnZlc3Q6Omh0bWxfbm9kZSgidGQiKSAlPiUNCiAgICAgIHJ2ZXN0OjpodG1sX25vZGUoInRhYmxlIikgJT4lDQogICAgICBydmVzdDo6aHRtbF9ub2RlKCJ0ciIpICU+JQ0KICAgICAgcnZlc3Q6Omh0bWxfbm9kZXMoInRkIikgJT4lDQogICAgICBsZW5ndGgoKQ0KICAgIA0KICAgICMgVGhlbiBjcmVhdGUgYSBkYXRhIGZyYW1lLCB3aXRoIG5ldyBhZGRyZXNzIGZyb20gdXMgdG8gZG93bmxvYWQgdGhlc2UgZnJvbQ0KICAgIGNvdW50cnlfcGFnZXMgPC0gZHBseXI6OmRhdGFfZnJhbWUoDQogICAgICBwYWdlX251bWJlciA9IDE6Y291bnRyeV90YWJsZV9udW1iZXIsDQogICAgICBwYWdlX2VsZW1lbnQgPSBzdHJpbmdyOjpzdHJfYygiI1NuYWtlc0dyaWRWaWV3ID4gdGJvZHkgPiB0cjpudGgtY2hpbGQoMTIpID4gdGQgPiB0YWJsZSA+IHRib2R5ID4gdHIgPiB0ZDpudGgtY2hpbGQoIiwgcGFnZV9udW1iZXIsICIpIikpDQogICAgDQogICAgY291bnRyeV9wYWdlcyA8LSBjb3VudHJ5X3BhZ2VzWy0xLF0NCiAgICBjb3VudHJ5X3BhZ2VzIDwtIGNvdW50cnlfcGFnZXNbLDJdDQogICAgDQogICAgIyBUaGVuIHVzZSBhIHNlY29uZGFyeSBmdW5jdGlvbiB0byBkb3dubG9hZCB0aGVzZQ0KICAgIHNlY29uZGFyeV9jb3VudHJ5IDwtIHB1cnJyOjpwbWFwKGNvdW50cnlfcGFnZXMsIHNuYWtlX2NvdW50cnlfc2Vjb25kYXJ5X2Rvd25sb2FkKSAlPiUNCiAgICAgIGRwbHlyOjpiaW5kX3Jvd3MoKQ0KICAgIA0KICAgICMgVGhlbiwgZm9yIGNvdW50cmllcyB0aGF0IHdlIGhhZCB0byBkb3dubG9hZCBtdWx0aXBsZSBwYWdlcywgbWVyZ2UgdGhlbSBhbGwgdG9nZXRoZXINCiAgICBjb3VudHJ5X3RhYmxlIDwtIGRwbHlyOjpiaW5kX3Jvd3MoY291bnRyeV90YWJsZSwgc2Vjb25kYXJ5X2NvdW50cnkpDQogICAgY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X3RhYmxlWywxOjRdICU+JQ0KICAgICAgZHBseXI6OmZpbHRlcihpcy5uYShgTGluaypgKSkNCiAgfQ0KICANCiAgY291bnRyeV90YWJsZSA8LSBjb3VudHJ5X3RhYmxlICU+JQ0KICAgIGRwbHlyOjptdXRhdGUoY291bnRyeV9pZCA9IGNvdW50cnlfaWQsDQogICAgICAgICAgIGNvdW50cnlfbmFtZSA9IGNvdW50cnlfbmFtZSkNCiAgDQogIG1lc3NhZ2UoY291bnRyeV9uYW1lKQ0KICBjb3VudHJ5X3RhYmxlDQp9DQpgYGANCg0KDQoNCmBgYHtyIGxhc3Rfc3RlcHN9DQphZmdoYW5pc3RhbiA8LSBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkKHggPSBzbmFrZV9jb3VudHJpZXMkeFsxXSwgY291bnRyeV9pZCA9IHNuYWtlX2NvdW50cmllcyRjb3VudHJ5X2lkWzFdLCBjb3VudHJ5X25hbWUgPSBzbmFrZV9jb3VudHJpZXMkY291bnRyeV9uYW1lWzFdKQ0KYGBgDQoNCkxldHMgdGVzdCBpdCB3aXRoIGEgbWluaXNhbXBsZQ0KYGBge3IgZmluYWxfdGVzdH0NCm1pbmlfY291bnRyaWVzIDwtIGhlYWQoc25ha2VfY291bnRyaWVzKSAlPiUNCiAgZHBseXI6OnNlbGVjdCgtbGlzdF9wb3NpdGlvbikNCg0KbWluaV9kYXRhIDwtIHB1cnJyOjpwbWFwKG1pbmlfY291bnRyaWVzLCBzbmFrZV9jb3VudHJ5X2Rvd25sb2FkKSAlPiUNCiAgZHBseXI6OmJpbmRfcm93cygpDQpgYGANCg0KVGhhdCB3b3JrcyB0b28hDQo=</div>
 
 
 
