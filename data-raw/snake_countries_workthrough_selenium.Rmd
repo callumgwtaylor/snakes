@@ -165,12 +165,7 @@ snake_country_secondary_download <- function(page_element){
 if(more_pages == TRUE){
   # Then Work Out Exactly How Many More Pages
   country_table_number <- country_html %>%
-  rvest::html_node("#SnakesGridView") %>%
-  rvest::html_node("tbody > tr:nth-child(12)") %>%
-  rvest::html_node("td") %>%
   rvest::html_node("table") %>%
-  rvest::html_node("tr") %>%
-  rvest::html_nodes("td") %>%
   length()
 
   
@@ -255,12 +250,7 @@ snake_country_download <- function(x, country_id, country_name){
   if(more_pages == TRUE){
     # Then Work Out Exactly How Many More Pages
     country_table_number <- country_html %>%
-      rvest::html_node("#SnakesGridView") %>%
-      rvest::html_node("tbody > tr:nth-child(12)") %>%
-      rvest::html_node("td") %>%
       rvest::html_node("table") %>%
-      rvest::html_node("tr") %>%
-      rvest::html_nodes("td") %>%
       length()
     
     # Then create a data frame, with new address from us to download these from
